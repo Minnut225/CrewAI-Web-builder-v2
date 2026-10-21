@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"secondary-fixed-dim":"#ffb689","on-primary":"#ffffff","outline-variant":"#d4c3bc","on-surface":"#231a13","surface-tint":"#765849","error":"#ba1a1a","primary-fixed":"#ffdbcb","surface-container-high":"#f7e5d9","secondary":"#88512a","on-tertiary-container":"#5c9e6a","tertiary-container":"#003013","on-error":"#ffffff","background":"#fff8f5","on-secondary-fixed-variant":"#6c3a15","surface-bright":"#fff8f5","tertiary":"#001907","inverse-primary":"#e5beac","primary-fixed-dim":"#e5beac","outline":"#82746f","secondary-container":"#fdb385","error-container":"#ffdad6","surface":"#fff8f5","inverse-on-surface":"#ffede3","on-tertiary":"#ffffff","tertiary-fixed-dim":"#92d69d","surface-variant":"#f1dfd4","on-primary-fixed":"#2b160b","surface-container-highest":"#f1dfd4","on-surface-variant":"#50443f","on-error-container":"#93000a","on-background":"#231a13","inverse-surface":"#392e27","on-primary-container":"#ab8878","primary-container":"#3a2317","secondary-fixed":"#ffdbc7","surface-container-lowest":"#ffffff","surface-dim":"#e9d7cb","on-tertiary-fixed-variant":"#0a5226","on-primary-fixed-variant":"#5c4133","surface-container":"#fdeadf","primary":"#220f05","on-secondary":"#ffffff","on-secondary-fixed":"#311300","on-tertiary-fixed":"#00210b","tertiary-fixed":"#adf3b8","on-secondary-container":"#78431e","surface-container-low":"#fff1e9"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-2xl":"3rem","space-xs":"0.25rem","gutter":"1rem","gutter-desktop":"1.5rem","margin":"1rem","space-sm":"0.5rem","space-xl":"2rem","space-md":"0.75rem","space-base":"1rem","margin-desktop":"2rem","space-2xs":"0.125rem","space-lg":"1.5rem"},"fontFamily":{"label-sm":["Plus Jakarta Sans"],"currency-cell":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"hotkey-kbd":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"currency-display":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"]},"fontSize":{"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"currency-cell":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"hotkey-kbd":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"700"}],"title-md":["15px",{"lineHeight":"22px","fontWeight":"600"}],"display-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"700"}],"currency-display":["22px",{"lineHeight":"28px","letterSpacing":"0.01em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"label-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="px-space-lg py-space-lg flex items-center gap-space-md"><img alt="CoffeeFlow Brand Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VYpcQfKlSDYqI_THxN88RkHsX9_79frcvuyZoM4NcSksYZ-lqQ8AHc2p2db805OSiQxMlrGGijm1oUus0-D6mxhODKWYwjnrGX2a5SqUIXpuEC-rxnActJu8vC5kAnv7G3A6ffqUZ2XyCiUSz8_-NHw9IS47G5vlARyWX6p-RUMLVTFvtYsO0AwLb0mugMvbUaSUFqMPHEx-XVk-YPSik07Y0c--EDpkx_InjVweZahY2-UhgatxZTTvNZ"/><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-primary tracking-tight truncate">CoffeeFlow</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Chi nhánh 01 - Đặng Văn Ngữ</span></div></div><div class="px-space-md py-space-xs"><span class="px-space-sm font-label-sm text-label-sm uppercase text-outline tracking-wider">Vận hành &amp; Bán hàng</span><nav class="mt-space-xs flex flex-col gap-space-2xs" data-active-classes="bg-primary text-on-primary font-title-md"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="tong-quan" href="#"><span class="truncate">Tổng quan</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="ban-hang-pos" href="#"><span class="truncate">Bán hàng (POS)</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="don-hang" href="#"><span class="truncate">Đơn hàng</span></a></nav></div><div class="px-space-md pt-space-md"><span class="px-space-sm font-label-sm text-label-sm uppercase text-outline tracking-wider">Quản trị cửa hàng</span><nav class="mt-space-xs flex flex-col gap-space-2xs" data-active-classes="bg-primary text-on-primary font-title-md"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="san-pham" href="#"><span class="truncate">Sản phẩm</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="danh-muc" href="#"><span class="truncate">Danh mục</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="kho-nguyen-lieu" href="#"><span class="truncate">Kho nguyên liệu</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="cong-thuc-pha-che" href="#"><span class="truncate">Công thức pha chế</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="bao-cao-doanh-thu" href="#"><span class="truncate">Báo cáo doanh thu</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="nhat-ky-hoat-dong" href="#"><span class="truncate">Nhật ký hoạt động</span></a></nav></div></div><div class="p-space-md mb-space-sm"><nav class="flex flex-col gap-space-2xs" data-active-classes="bg-primary text-on-primary font-title-md"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="cai-dat" href="#"><span class="truncate">Cài đặt</span></a></nav></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40"><div class="w-full h-16 px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-body-sm"><span class="text-outline font-medium">CoffeeFlow</span><span class="text-outline-variant">/</span><span class="font-semibold text-primary">Quản trị hệ thống</span></div><div class="h-4 w-px bg-outline-variant"></div><div class="inline-flex items-center gap-space-xs bg-surface-container-high px-space-md py-space-2xs rounded-full"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-on-surface">Ca sáng (06:30 - 14:30) • Đang mở</span></div></div><div class="flex items-center gap-space-md"><div class="relative w-64"><span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full pl-10 pr-space-md py-space-2xs rounded-lg bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-body-sm shadow-[0_1px_3px_rgba(43,24,16,0.04)] focus:outline-none focus:ring-2 focus:ring-secondary/30" placeholder="Tìm kiếm đơn, món..." type="search"/></div><div class="h-6 w-px bg-outline-variant"></div><button aria-label="Thông báo" class="relative p-space-xs rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs cursor-pointer"><img alt="Nguyễn Mai Lan" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSrpK8A9iefIepQnXCta_LUCW9hUHjgzAvpO7ZxRe2_-n73bSKsdA6LM6GcXCu7EQ6Fu_xm4WHsx3OS6ahbY4-TYHpf6RKbUGqpTrY845Zmjl7hhQsYD1G5-wVFRWLxx2rAF85waFPENQf3Yv2xUCR36o95R_ApzylW-fKJ4hhBnCKp8Ke-WT2nMGVSu4jXXzwY384THvOc8Wy2fS4s1uP68NyMR8KXaV05iHdwRCa3N8ZyLit636AUw"/><div class="hidden sm:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Nguyễn Mai Lan</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Quản lý / Manager</span></div></div></div></div></header><main class="relative w-full pt-16 bg-background flex-1 px-space-lg py-space-lg"><div class="flex flex-col w-full pb-space-2xl">
+<!-- Page Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-lg">
+<div>
+<div class="flex items-center gap-space-xs text-label-sm font-label-sm uppercase tracking-wider text-secondary mb-space-2xs">
+<span>Vận hành &amp; Menu</span>
+<span class="text-outline-variant">•</span>
+<span>Cập nhật 10 phút trước</span>
+</div>
+<h1 class="text-display-lg font-display-lg text-primary tracking-tight">Quản lý sản phẩm</h1>
+<p class="text-body-md font-body-md text-on-surface-variant mt-space-2xs">
+        Danh mục 28 món đồ uống &amp; bánh ngọt đang kinh doanh trên toàn chuỗi
+      </p>
+</div>
+<div class="flex items-center gap-space-sm self-start lg:self-center">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container text-primary font-title-md text-title-md transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Xuất danh sách</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-primary-container hover:bg-primary text-on-primary font-title-md text-title-md transition-all shadow-md hover:shadow-lg" onclick="openDrawer('Thêm sản phẩm mới')" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>+ Thêm sản phẩm mới</span>
+</button>
+</div>
+</div>
+<!-- Metric Quick Glance Cards -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md mb-space-lg">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Tổng số món</span>
+<div class="flex items-baseline justify-between mt-space-xs">
+<span class="text-currency-display font-currency-display text-primary">28</span>
+<span class="text-label-sm font-label-sm text-secondary bg-surface-container-high px-space-xs py-space-2xs rounded-full">4 danh mục</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Đang phục vụ</span>
+<div class="flex items-baseline justify-between mt-space-xs">
+<span class="text-currency-display font-currency-display text-on-tertiary-container">25</span>
+<span class="text-label-sm font-label-sm text-on-tertiary-fixed-variant bg-tertiary-fixed/30 px-space-xs py-space-2xs rounded-full">89.2%</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl justify-between flex flex-col">
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Tạm hết nguyên liệu</span>
+<div class="flex items-baseline justify-between mt-space-xs">
+<span class="text-currency-display font-currency-display text-secondary">03</span>
+<span class="text-label-sm font-label-sm text-secondary bg-secondary-fixed/40 px-space-xs py-space-2xs rounded-full">Cảnh báo kho</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Chưa gắn công thức</span>
+<div class="flex items-baseline justify-between mt-space-xs">
+<span class="text-currency-display font-currency-display text-error">01</span>
+<span class="text-label-sm font-label-sm text-on-error-container bg-error-container/60 px-space-xs py-space-2xs rounded-full">Cần bổ sung</span>
+</div>
+</div>
+</div>
+<!-- Search & Filter Controls -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md flex flex-col gap-space-md">
+<div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-md">
+<!-- Search Input -->
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full pl-11 pr-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Tìm theo tên món, mã SKU..." type="search"/>
+</div>
+<!-- Filters & Display State -->
+<div class="flex items-center gap-space-sm overflow-x-auto pb-space-2xs md:pb-0">
+<div class="flex items-center gap-space-xs bg-surface-container-low p-space-2xs rounded-lg">
+<span class="material-symbols-outlined text-[18px] text-outline ml-space-xs">filter_list</span>
+<select class="bg-transparent text-label-md font-label-md text-on-surface py-space-2xs pr-space-md pl-space-xs focus:outline-none cursor-pointer">
+<option value="all">Tất cả trạng thái</option>
+<option value="active">Đang bán (25)</option>
+<option value="oos">Tạm hết hàng (3)</option>
+<option value="stopped">Ngừng kinh doanh (0)</option>
+</select>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-low p-space-2xs rounded-lg">
+<span class="material-symbols-outlined text-[18px] text-outline ml-space-xs">inventory_2</span>
+<select class="bg-transparent text-label-md font-label-md text-on-surface py-space-2xs pr-space-md pl-space-xs focus:outline-none cursor-pointer">
+<option value="all">Định lượng: Tất cả</option>
+<option value="linked">Đã liên kết kho</option>
+<option value="missing">Thiếu công thức</option>
+</select>
+</div>
+<button class="p-space-sm rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Làm mới bộ lọc" type="button">
+<span class="material-symbols-outlined text-[20px]">restart_alt</span>
+</button>
+</div>
+</div>
+<!-- Category Tabs/Pills -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar pt-space-xs">
+<button class="px-space-md py-space-2xs rounded-full bg-primary text-on-primary font-label-md text-label-md whitespace-nowrap transition-colors" type="button">
+        Tất cả (28)
+      </button>
+<button class="px-space-md py-space-2xs rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap transition-colors" type="button">
+        Cà phê máy (8)
+      </button>
+<button class="px-space-md py-space-2xs rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap transition-colors" type="button">
+        Cà phê truyền thống (6)
+      </button>
+<button class="px-space-md py-space-2xs rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap transition-colors" type="button">
+        Trà &amp; Macchiato (8)
+      </button>
+<button class="px-space-md py-space-2xs rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md whitespace-nowrap transition-colors" type="button">
+        Bánh ngọt (6)
+      </button>
+</div>
+</div>
+<!-- Product Table Container -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-label-sm font-label-sm text-outline uppercase tracking-wider">
+<th class="py-space-md px-space-lg">Món &amp; Hình ảnh</th>
+<th class="py-space-md px-space-md">Mã SKU</th>
+<th class="py-space-md px-space-md">Danh mục</th>
+<th class="py-space-md px-space-md text-right">Giá cơ sở</th>
+<th class="py-space-md px-space-md text-center">Biến thể Size</th>
+<th class="py-space-md px-space-md">Kho &amp; Công thức</th>
+<th class="py-space-md px-space-md">Trạng thái</th>
+<th class="py-space-md px-space-lg text-right">Thao tác</th>
+</tr>
+</thead>
+<tbody class="text-body-md font-body-md divide-y divide-surface-container-low">
+<!-- Row 1: Cà phê Muối Cố Đô (Active focus item) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-12 rounded-lg object-cover bg-surface-container-high shrink-0 shadow-sm" data-alt="Artisanal salted coffee in a vintage glass cup with creamy salty foam layer on top dark espresso base on wooden cafe table warm amber tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACacRLwsoitiVpSF2v6Z3XVBjOooueHT-kxd-m6KcZfQGXMzSgt-Fg4v7CfPKhPkYDM-XqlJiziDMtHmeO6idsc7s0i-1-KZ5hkUbwcIvseH37qMQUo-P5OAxwdd3oSdusE5m_h13Qe2pE_nnZDezASng0OZYwa41kPUWCaLjcnYzSf-n45mdZW0n53qKEmlFnLJJYUHIVkTLfgC2TidT9NKuRJIfWc_mysEYLO0LVcBIN5P9g4ZpL5w"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors truncate">Cà phê Muối Cố Đô</span>
+<span class="text-body-sm font-body-sm text-outline truncate">Robusta Đắk Lắk + Kem mặn</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-hotkey-kbd text-hotkey-kbd text-on-surface-variant bg-surface-container-high px-space-xs py-space-2xs rounded">SKU-CF01</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="text-body-sm font-body-sm text-on-surface">Cà phê truyền thống</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-currency-cell text-currency-cell text-primary">45.000 ₫</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex items-center gap-space-2xs">
+<span class="w-6 h-6 rounded flex items-center justify-center text-label-sm font-label-sm bg-surface-container text-on-surface">S</span>
+<span class="w-6 h-6 rounded flex items-center justify-center text-label-sm font-label-sm bg-primary-container text-on-primary">M</span>
+<span class="w-6 h-6 rounded flex items-center justify-center text-label-sm font-label-sm bg-surface-container text-on-surface">L</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-space-xs text-on-tertiary-container bg-surface-container-low px-space-sm py-space-2xs rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+<span class="text-label-sm font-label-sm">Đã liên kết kho</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-[#EAF5ED] text-[#2E6F40]">
+<span class="w-2 h-2 rounded-full bg-[#2E6F40]"></span>
+<span class="text-label-sm font-label-sm">Đang bán</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="inline-flex items-center gap-space-xs justify-end">
+<button class="p-space-xs rounded-lg hover:bg-surface-container-high text-secondary transition-colors" onclick="openDrawer('Cà phê Muối Cố Đô')" title="Chỉnh sửa chi tiết" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Bật/Tắt bán" type="button">
+<span class="material-symbols-outlined text-[20px]">toggle_on</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-error transition-colors" title="Xóa món" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Cold Brew Cam Vàng -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-12 rounded-lg object-cover bg-surface-container-high shrink-0 shadow-sm" data-alt="Refreshing cold brew coffee infused with fresh orange slice and rosemary in glass tumbler clear ice cubes cinematic warm cafe light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGF2J_-Be6410DREDbm_A8daj_Mj8CBeVFcpNAHdAulkgNoRxVBWI76PknOkiRPFqGHCSNlf4SLf1D-wDfAwV7tKkxlpiOlN95f6f0CbSdeQEinp2ZBhhnbuY7JKbjRA4ggOqg2k2aCoitnfMYldBClPaIOLsdi_50sozslNY4UAEI5NJ0Ybf4GTXo_dvuLSvHsndE64N-K_CQQUjvVlwNb8Pyw8IiG4peowwgLFmz9loRGD4y6krccA"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors truncate">Cold Brew Cam Vàng</span>
+<span class="text-body-sm font-body-sm text-outline truncate">Ủ lạnh 16h + Cam Valencia</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-hotkey-kbd text-hotkey-kbd text-on-surface-variant bg-surface-container-high px-space-xs py-space-2xs rounded">SKU-CB03</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="text-body-sm font-body-sm text-on-surface">Cà phê máy</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-currency-cell text-currency-cell text-primary">55.000 ₫</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex items-center gap-space-2xs">
+<span class="w-6 h-6 rounded flex items-center justify-center text-label-sm font-label-sm bg-primary-container text-on-primary">M</span>
+<span class="w-6 h-6 rounded flex items-center justify-center text-label-sm font-label-sm bg-surface-container text-on-surface">L</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-space-xs text-on-tertiary-container bg-surface-container-low px-space-sm py-space-2xs rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+<span class="text-label-sm font-label-sm">Đã liên kết kho</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-[#EAF5ED] text-[#2E6F40]">
+<span class="w-2 h-2 rounded-full bg-[#2E6F40]"></span>
+<span class="text-label-sm font-label-sm">Đang bán</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="inline-flex items-center gap-space-xs justify-end">
+<button class="p-space-xs rounded-lg hover:bg-surface-container-high text-secondary transition-colors" onclick="openDrawer('Cold Brew Cam Vàng')" title="Chỉnh sửa chi tiết" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Bật/Tắt bán" type="button">
+<span class="material-symbols-outlined text-[20px]">toggle_on</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-error transition-colors" title="Xóa món" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Bạc sỉu 3 tầng -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-12 rounded-lg object-cover bg-surface-container-high shrink-0 shadow-sm" data-alt="Traditional Vietnamese three layer iced coffee condensed milk fresh milk and espresso top in highball glass clean cafe background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0wV4aig2wFvHI5tcmMh0Ww8OtOM0UfUAQeKGo5AmrEVuLEEpdpvhaCy4RX6dAswTVVRHOz3ig-sNuqDrXxyw0MqK2n46pSD6D8sJiA_ObFtK8eQxmZFssc6bDj7SpauMzCKpKoC32eswPnQc6NUC3cGY1EyXfU2wfm0VuosMZco0qBIPQYQl42KOnocLZ3pxwv4h7JO-rUOp-LyzHh61CF1fvyaIGZie8iYRQfUZ_zDsZmsoNlzwsuQ"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors truncate">Bạc sỉu 3 tầng</span>
+<span class="text-body-sm font-body-sm text-outline truncate">Sữa đặc + Sữa tươi + Espresso</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-hotkey-kbd text-hotkey-kbd text-on-surface-variant bg-surface-container-high px-space-xs py-space-2xs rounded">SKU-CF04</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="text-body-sm font-body-sm text-on-surface">Cà phê truyền thống</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-currency-cell text-currency-cell text-primary">39.000 ₫</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex items-center gap-space-2xs">
+<span class="w-6 h-6 rounded flex items-center justify-center text-label-sm font-label-sm bg-surface-container text-on-surface">S</span>
+<span class="w-6 h-6 rounded flex items-center justify-center text-label-sm font-label-sm bg-primary-container text-on-primary">M</span>
+<span class="w-6 h-6 rounded flex items-center justify-center text-label-sm font-label-sm bg-surface-container text-on-surface">L</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-space-xs text-on-tertiary-container bg-surface-container-low px-space-sm py-space-2xs rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+<span class="text-label-sm font-label-sm">Đã liên kết kho</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-[#EAF5ED] text-[#2E6F40]">
+<span class="w-2 h-2 rounded-full bg-[#2E6F40]"></span>
+<span class="text-label-sm font-label-sm">Đang bán</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="inline-flex items-center gap-space-xs justify-end">
+<button class="p-space-xs rounded-lg hover:bg-surface-container-high text-secondary transition-colors" onclick="openDrawer('Bạc sỉu 3 tầng')" title="Chỉnh sửa chi tiết" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Bật/Tắt bán" type="button">
+<span class="material-symbols-outlined text-[20px]">toggle_on</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-error transition-colors" title="Xóa món" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Trà Đào Cam Sả (OOS item) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-12 rounded-lg object-cover bg-surface-container-high shrink-0 shadow-sm" data-alt="Peach lemongrass iced tea with fresh peach slices and lemongrass stalks served in tall glass morning cafe sunlight soft warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrfKcxTn8MyfxJs3Mmo-hujqmhF80MlDln-K1VSuy-ToUcNLfqqImq9cmx3iKr_Ry0xLo3PI57WzAhdsLyWDF3WvRRWL5ImoC3RXoT3SOhgl5XUQreFXocByJJUuYcB6OX7lsqg29xCLIYsEsIxiwvde4V8KBpv2AfvQLLb77NE4kyaMmJdTe63r6P3BqiiamwBKaEEksogWhESdNUslM7oO7nnlYuPAXjjhaewTpZrkVYjYHX5Km99g"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors truncate">Trà Đào Cam Sả</span>
+<span class="text-body-sm font-body-sm text-outline truncate">Trà đen túi lọc + Đào ngâm</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-hotkey-kbd text-hotkey-kbd text-on-surface-variant bg-surface-container-high px-space-xs py-space-2xs rounded">SKU-TE02</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="text-body-sm font-body-sm text-on-surface">Trà &amp; Macchiato</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-currency-cell text-currency-cell text-primary">48.000 ₫</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<div class="inline-flex items-center gap-space-2xs">
+<span class="w-6 h-6 rounded flex items-center justify-center text-label-sm font-label-sm bg-primary-container text-on-primary">M</span>
+<span class="w-6 h-6 rounded flex items-center justify-center text-label-sm font-label-sm bg-surface-container text-on-surface">L</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-space-xs text-on-tertiary-container bg-surface-container-low px-space-sm py-space-2xs rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+<span class="text-label-sm font-label-sm">Đã liên kết kho</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-[#FEF6E9] text-[#B4690E]">
+<span class="w-2 h-2 rounded-full bg-[#B4690E]"></span>
+<span class="text-label-sm font-label-sm">Tạm hết món</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="inline-flex items-center gap-space-xs justify-end">
+<button class="p-space-xs rounded-lg hover:bg-surface-container-high text-secondary transition-colors" onclick="openDrawer('Trà Đào Cam Sả')" title="Chỉnh sửa chi tiết" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Bật/Tắt bán" type="button">
+<span class="material-symbols-outlined text-[20px]">toggle_off</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-error transition-colors" title="Xóa món" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Croissant Bơ Tỏi (Missing recipe) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-12 rounded-lg object-cover bg-surface-container-high shrink-0 shadow-sm" data-alt="Golden crisp garlic butter croissant pastry with herbs flaky texture fresh out of oven on ceramic bakery plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIrUVbc1IiHU5QkBEVwJwUq3O8P1qGqIiMP8npPurtBVs0ZlR5JUR6s1mww2CGlWK6DUXGewfD4nyNjkn4swHMCpX6M5lA6reM_LgV2nFk-YN_TdlgK1A3qjDClDX9vTqookTlYrPCMceWEmMl_ZKRE5fcdjfFmyn7EJKS_Q7PA_LhtFgWGmZxeuPGjnU9dCPj_aWPVgthI_YYeWw4BQrOV4MusbLjueGFpUxasDljQYs4dThQEBzftQ"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors truncate">Croissant Bơ Tỏi</span>
+<span class="text-body-sm font-body-sm text-outline truncate">Bơ New Zealand hảo hạng</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-hotkey-kbd text-hotkey-kbd text-on-surface-variant bg-surface-container-high px-space-xs py-space-2xs rounded">SKU-BK01</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="text-body-sm font-body-sm text-on-surface">Bánh ngọt</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-currency-cell text-currency-cell text-primary">35.000 ₫</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="text-body-sm font-body-sm text-outline">Đơn vị bánh</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-space-xs text-error bg-error-container/60 px-space-sm py-space-2xs rounded-full">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span class="text-label-sm font-label-sm">Thiếu công thức</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-[#EAF5ED] text-[#2E6F40]">
+<span class="w-2 h-2 rounded-full bg-[#2E6F40]"></span>
+<span class="text-label-sm font-label-sm">Đang bán</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="inline-flex items-center gap-space-xs justify-end">
+<button class="p-space-xs rounded-lg hover:bg-surface-container-high text-secondary transition-colors" onclick="openDrawer('Croissant Bơ Tỏi')" title="Chỉnh sửa chi tiết" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Bật/Tắt bán" type="button">
+<span class="material-symbols-outlined text-[20px]">toggle_on</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-error transition-colors" title="Xóa món" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Bánh Tiramisu Hũ -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-12 rounded-lg object-cover bg-surface-container-high shrink-0 shadow-sm" data-alt="Gourmet coffee tiramisu in small glass jar cocoa powder dusting on top layered mascarpone cream artisan dessert cafe setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfxd3sFZfKmK3vzec_-5gVhC_H6cp8EU1FbuEYHWPKIlnznR0yTrOrqGzOrRHEBopmSOaDjkSlaFhhL48-7GCykl4mMVxRapeEfQQeDiBhrJb_eOwg_UGwFsz-X3F0b3nQyzxVFeEusFPcIJxcolde6-jisboEwC1etWYpxCmdTdkJWZOHtJhLBCM6kx3Vttjb01DVO-V3xs-3bASR7zqQCKmrv2Mtig6Bvx2sOMK5jNnZD48y-ihrcA"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors truncate">Bánh Tiramisu Hũ</span>
+<span class="text-body-sm font-body-sm text-outline truncate">Mascarpone + Rượu Kahlúa</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-hotkey-kbd text-hotkey-kbd text-on-surface-variant bg-surface-container-high px-space-xs py-space-2xs rounded">SKU-BK05</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="text-body-sm font-body-sm text-on-surface">Bánh ngọt</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="font-currency-cell text-currency-cell text-primary">52.000 ₫</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="text-body-sm font-body-sm text-outline">Đơn vị hũ</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-space-xs text-on-tertiary-container bg-surface-container-low px-space-sm py-space-2xs rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+<span class="text-label-sm font-label-sm">Đã liên kết kho</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-[#EAF5ED] text-[#2E6F40]">
+<span class="w-2 h-2 rounded-full bg-[#2E6F40]"></span>
+<span class="text-label-sm font-label-sm">Đang bán</span>
+</div>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="inline-flex items-center gap-space-xs justify-end">
+<button class="p-space-xs rounded-lg hover:bg-surface-container-high text-secondary transition-colors" onclick="openDrawer('Bánh Tiramisu Hũ')" title="Chỉnh sửa chi tiết" type="button">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Bật/Tắt bán" type="button">
+<span class="material-symbols-outlined text-[20px]">toggle_on</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-error transition-colors" title="Xóa món" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Summary Footer -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="text-body-sm font-body-sm text-on-surface-variant">
+        Hiển thị <span class="font-semibold text-primary">1 - 6</span> trên tổng số <span class="font-semibold text-primary">28</span> món
+      </div>
+<div class="flex items-center gap-space-xs">
+<button class="p-space-2xs rounded bg-surface-container-lowest text-outline hover:text-on-surface hover:bg-surface-container-high disabled:opacity-40 transition-colors" disabled="" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded text-label-md font-label-md bg-primary text-on-primary flex items-center justify-center" type="button">1</button>
+<button class="w-8 h-8 rounded text-label-md font-label-md bg-surface-container-lowest text-on-surface hover:bg-surface-container-high flex items-center justify-center transition-colors" type="button">2</button>
+<button class="w-8 h-8 rounded text-label-md font-label-md bg-surface-container-lowest text-on-surface hover:bg-surface-container-high flex items-center justify-center transition-colors" type="button">3</button>
+<button class="w-8 h-8 rounded text-label-md font-label-md bg-surface-container-lowest text-on-surface hover:bg-surface-container-high flex items-center justify-center transition-colors" type="button">4</button>
+<button class="p-space-2xs rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Edit/Create Product Drawer Panel (Backdrop + Slide Over) -->
+<div class="fixed inset-0 bg-[#1F140E]/45 backdrop-blur-xs z-50 transition-opacity duration-300 opacity-0 pointer-events-none" id="product-drawer-overlay" onclick="closeDrawer()"></div>
+<div class="fixed top-0 right-0 bottom-0 w-full max-w-xl bg-surface-container-lowest shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between overflow-hidden" id="product-drawer">
+<!-- Drawer Header -->
+<div class="p-space-lg bg-surface-container-low flex items-center justify-between shrink-0">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm uppercase text-secondary tracking-wider font-semibold">Biểu mẫu sản phẩm</span>
+<h2 class="text-headline-lg font-headline-lg text-primary tracking-tight" id="drawer-title">Chỉnh sửa sản phẩm</h2>
+</div>
+<button class="p-space-xs rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" onclick="closeDrawer()" type="button">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<!-- Drawer Body (Scrollable) -->
+<div class="flex-1 overflow-y-auto p-space-lg flex flex-col gap-space-lg">
+<!-- Image Upload & Preview Section -->
+<div class="flex items-center gap-space-md p-space-md bg-surface-container-low rounded-xl">
+<img class="w-20 h-20 rounded-lg object-cover shadow-sm bg-surface-container-high shrink-0" data-alt="Artisanal salted coffee in vintage glass cup with creamy foam layer on top rich espresso base warm tones" id="drawer-preview-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF4lqpNghGHwIG1eAG4wkuVw9muwofsdmXouEJQQJgqL5DifkaHpik6mj7v-lKC5oawIwK_MIzvHxR0icXX3K_nePLdM1QlKE0D3xHlh237NuLhrLGI9HzYyAs7BY4ACkd9TOuAeBwDJjEgtloXEYzGhkR9nF4baoNlcG9-7cw4jTz2ReGtlMVx6f4wsnVWlc96zL934L9490IBhFn5ogzubj5FF0SIFddPfoNNrjP2ZreBdMLgIUQNw"/>
+<div class="flex flex-col justify-center gap-space-xs flex-1">
+<span class="text-title-md font-title-md text-primary leading-tight">Ảnh đại diện sản phẩm</span>
+<span class="text-body-sm font-body-sm text-outline">Định dạng JPG, PNG hoặc WEBP (Tối đa 2MB)</span>
+<div class="flex items-center gap-space-sm mt-space-2xs">
+<button class="px-space-md py-space-2xs rounded bg-surface-container-lowest text-secondary font-label-md text-label-md hover:bg-surface-container-high transition-colors shadow-xs" type="button">
+              Thay ảnh
+            </button>
+<button class="px-space-md py-space-2xs rounded text-error font-label-md text-label-md hover:bg-error-container/40 transition-colors" type="button">
+              Xóa ảnh
+            </button>
+</div>
+</div>
+</div>
+<!-- Core Info Inputs -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="text-label-sm font-label-sm text-on-surface font-semibold uppercase tracking-wider">Tên sản phẩm *</label>
+<input class="w-full px-space-md py-space-sm rounded-lg bg-surface-container-low focus:bg-surface-container-lowest text-on-surface font-title-md text-title-md focus:outline-none transition-colors" id="drawer-item-name" type="text" value="Cà phê Muối Cố Đô"/>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="text-label-sm font-label-sm text-on-surface font-semibold uppercase tracking-wider">Danh mục *</label>
+<select class="w-full px-space-md py-space-sm rounded-lg bg-surface-container-low focus:bg-surface-container-lowest text-on-surface font-title-md text-title-md focus:outline-none transition-colors cursor-pointer">
+<option selected="">Cà phê truyền thống</option>
+<option>Cà phê máy</option>
+<option>Trà &amp; Macchiato</option>
+<option>Bánh ngọt</option>
+</select>
+</div>
+</div>
+<!-- SKU & Base Price -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="text-label-sm font-label-sm text-on-surface font-semibold uppercase tracking-wider">Mã sản phẩm (SKU)</label>
+<input class="w-full px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface font-hotkey-kbd text-hotkey-kbd uppercase focus:outline-none" type="text" value="SKU-CF01"/>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="text-label-sm font-label-sm text-on-surface font-semibold uppercase tracking-wider">Giá cơ sở (Size M) *</label>
+<div class="relative">
+<input class="w-full pl-space-md pr-10 py-space-sm rounded-lg bg-surface-container-low focus:bg-surface-container-lowest text-on-surface font-currency-cell text-currency-cell focus:outline-none transition-colors" type="text" value="45.000"/>
+<span class="absolute right-space-md top-1/2 -translate-y-1/2 text-outline font-semibold">₫</span>
+</div>
+</div>
+</div>
+<!-- Size Configuration Block -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<label class="text-label-sm font-label-sm text-on-surface font-semibold uppercase tracking-wider">Cấu hình kích cỡ (Size)</label>
+<button class="text-label-sm font-label-sm text-secondary hover:underline" type="button">+ Thêm Size</button>
+</div>
+<div class="flex flex-col gap-space-xs bg-surface-container-low p-space-sm rounded-xl">
+<!-- Size S -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-lowest rounded-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-md bg-surface-container-high flex items-center justify-center font-bold text-label-md text-primary">S</span>
+<span class="text-title-md font-title-md text-primary">Size Nhỏ (S)</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="text-body-sm font-body-sm text-outline">-5.000 ₫ (40.000 ₫)</span>
+<span class="material-symbols-outlined text-[18px] text-outline cursor-pointer hover:text-error">close</span>
+</div>
+</div>
+<!-- Size M -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-lowest rounded-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-md bg-primary-container text-on-primary flex items-center justify-center font-bold text-label-md">M</span>
+<div class="flex items-center gap-space-xs">
+<span class="text-title-md font-title-md text-primary">Size Chuẩn (M)</span>
+<span class="text-label-sm font-label-sm text-secondary bg-surface-container-high px-space-xs rounded">Mặc định</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="text-body-sm font-body-sm font-medium text-primary">0 ₫ (45.000 ₫)</span>
+<span class="material-symbols-outlined text-[18px] text-outline cursor-not-allowed opacity-40">lock</span>
+</div>
+</div>
+<!-- Size L -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-lowest rounded-lg">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-md bg-surface-container-high flex items-center justify-center font-bold text-label-md text-primary">L</span>
+<span class="text-title-md font-title-md text-primary">Size Lớn (L)</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="text-body-sm font-body-sm text-outline">+10.000 ₫ (55.000 ₫)</span>
+<span class="material-symbols-outlined text-[18px] text-outline cursor-pointer hover:text-error">close</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Topping / Add-on Configuration -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<label class="text-label-sm font-label-sm text-on-surface font-semibold uppercase tracking-wider">Cấu hình Topping &amp; Thêm món</label>
+<button class="text-label-sm font-label-sm text-secondary hover:underline" type="button">+ Thêm Topping</button>
+</div>
+<div class="flex flex-col gap-space-xs bg-surface-container-low p-space-sm rounded-xl">
+<div class="flex items-center justify-between p-space-sm bg-surface-container-lowest rounded-lg">
+<span class="text-title-md font-title-md text-primary">Thêm Shot Espresso</span>
+<div class="flex items-center gap-space-sm">
+<span class="font-currency-cell text-currency-cell text-secondary">+10.000 ₫</span>
+<input checked="" class="accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</div>
+</div>
+<div class="flex items-center justify-between p-space-sm bg-surface-container-lowest rounded-lg">
+<span class="text-title-md font-title-md text-primary">Thêm Kem mặn</span>
+<div class="flex items-center gap-space-sm">
+<span class="font-currency-cell text-currency-cell text-secondary">+8.000 ₫</span>
+<input checked="" class="accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</div>
+</div>
+<div class="flex items-center justify-between p-space-sm bg-surface-container-lowest rounded-lg">
+<span class="text-title-md font-title-md text-primary">Thạch đào</span>
+<div class="flex items-center gap-space-sm">
+<span class="font-currency-cell text-currency-cell text-secondary">+8.000 ₫</span>
+<input checked="" class="accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Description -->
+<div class="flex flex-col gap-space-xs">
+<label class="text-label-sm font-label-sm text-on-surface font-semibold uppercase tracking-wider">Mô tả ngắn</label>
+<textarea class="w-full p-space-md rounded-lg bg-surface-container-low focus:bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none transition-colors resize-none" rows="3">Hạt Robusta Đắk Lắk đậm đà hòa quyện cùng lớp kem béo mặn đặc trưng Cố Đô.</textarea>
+</div>
+<!-- Toggle Status Switch -->
+<div class="flex items-center justify-between p-space-md bg-surface-container-low rounded-xl">
+<div class="flex flex-col">
+<span class="text-title-md font-title-md text-primary">Đang mở bán tại POS</span>
+<span class="text-body-sm font-body-sm text-outline">Cho phép thu ngân và khách order trên hệ thống</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+</div>
+<!-- Drawer Footer Actions -->
+<div class="p-space-lg bg-surface-container-low flex items-center justify-end gap-space-sm shrink-0 shadow-lg">
+<button class="px-space-lg py-space-sm rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-title-md text-title-md transition-colors" onclick="closeDrawer()" type="button">
+        Hủy bỏ
+      </button>
+<button class="px-space-xl py-space-sm rounded-lg bg-primary-container hover:bg-primary text-on-primary font-title-md text-title-md transition-all shadow-md" onclick="saveProduct()" type="button">
+        Lưu thay đổi
+      </button>
+</div>
+</div>
+</div>
+<script>
+  function openDrawer(itemName) {
+    const overlay = document.getElementById('product-drawer-overlay');
+    const drawer = document.getElementById('product-drawer');
+    const title = document.getElementById('drawer-title');
+    const nameInput = document.getElementById('drawer-item-name');
+
+    if (itemName === 'Thêm sản phẩm mới') {
+      title.innerText = 'Thêm món mới';
+      nameInput.value = '';
+    } else {
+      title.innerText = 'Chỉnh sửa sản phẩm';
+      if (itemName) {
+        nameInput.value = itemName;
+      }
+    }
+
+    overlay.classList.remove('opacity-0', 'pointer-events-none');
+    overlay.classList.add('opacity-100');
+    drawer.classList.remove('translate-x-full');
+  }
+
+  function closeDrawer() {
+    const overlay = document.getElementById('product-drawer-overlay');
+    const drawer = document.getElementById('product-drawer');
+
+    overlay.classList.remove('opacity-100');
+    overlay.classList.add('opacity-0', 'pointer-events-none');
+    drawer.classList.add('translate-x-full');
+  }
+
+  function saveProduct() {
+    closeDrawer();
+  }
+</script></main></div>
+</body></html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_blank" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"inverse-surface":"#392e27","primary-fixed":"#ffdbcb","surface-container-lowest":"#ffffff","background":"#fff8f5","on-surface-variant":"#50443f","on-surface":"#231a13","surface-container-highest":"#f1dfd4","primary-container":"#3a2317","surface-variant":"#f1dfd4","inverse-on-surface":"#ffede3","on-background":"#231a13","on-secondary":"#ffffff","error":"#ba1a1a","outline":"#82746f","on-error-container":"#93000a","on-primary-container":"#ab8878","surface-container-high":"#f7e5d9","on-error":"#ffffff","on-secondary-fixed":"#311300","on-primary":"#ffffff","surface-bright":"#fff8f5","surface-container":"#fdeadf","tertiary-fixed-dim":"#92d69d","surface-dim":"#e9d7cb","on-tertiary":"#ffffff","on-primary-fixed":"#2b160b","tertiary-fixed":"#adf3b8","surface":"#fff8f5","on-secondary-fixed-variant":"#6c3a15","tertiary":"#001907","surface-container-low":"#fff1e9","outline-variant":"#d4c3bc","on-primary-fixed-variant":"#5c4133","secondary":"#88512a","surface-tint":"#765849","tertiary-container":"#003013","on-secondary-container":"#78431e","primary-fixed-dim":"#e5beac","secondary-fixed":"#ffdbc7","on-tertiary-fixed-variant":"#0a5226","secondary-container":"#fdb385","on-tertiary-container":"#5c9e6a","secondary-fixed-dim":"#ffb689","on-tertiary-fixed":"#00210b","error-container":"#ffdad6","inverse-primary":"#e5beac","primary":"#220f05"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin":"1rem","space-2xl":"3rem","space-sm":"0.5rem","gutter":"1rem","space-md":"0.75rem","space-lg":"1.5rem","margin-desktop":"2rem","gutter-desktop":"1.5rem","space-xs":"0.25rem","space-2xs":"0.125rem","space-base":"1rem","space-xl":"2rem"},"fontFamily":{"currency-display":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"hotkey-kbd":["Plus Jakarta Sans"],"currency-cell":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},"fontSize":{"currency-display":["22px",{"lineHeight":"28px","letterSpacing":"0.01em","fontWeight":"700"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"hotkey-kbd":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"700"}],"currency-cell":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"title-md":["15px",{"lineHeight":"22px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"label-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased min-h-screen flex items-center justify-center"><main class="w-full"><div class="flex flex-col w-full">
+<!-- Dynamic Cafe Atmosphere Container -->
+<div class="min-h-screen w-full flex flex-col items-center justify-center bg-[#FAF7F2] p-4 sm:p-6">
+  <!-- Compact Auth Card -->
+  <div class="w-full max-w-[420px] bg-white rounded-2xl border border-neutral-200/80 shadow-sm p-8 sm:p-9">
+    <!-- Header -->
+    <div class="flex flex-col items-center text-center mb-8">
+      <div class="w-12 h-12 rounded-xl bg-[#2B1810] flex items-center justify-center text-white mb-4 shadow-sm">
+        <span class="material-symbols-outlined text-2xl">local_cafe</span>
+      </div>
+      <h1 class="text-2xl font-bold tracking-tight text-neutral-900 mb-1">CoffeeFlow</h1>
+      <p class="text-sm text-neutral-500 mb-3">Hệ thống quản lý quán cà phê</p>
+      <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-600 text-xs font-medium">
+        <span class="material-symbols-outlined text-xs text-neutral-500">store</span>
+        <span class="">Cơ sở Đặng Văn Ngữ, Hà Nội</span>
+      </div>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm" onsubmit="event.preventDefault(); handleShiftLogin();" class="space-y-4">
+      <!-- Account / Email Input -->
+      <div class="space-y-1.5">
+        <label class="block text-xs font-semibold text-neutral-700" for="username">
+          Mã nhân viên / Email
+        </label>
+        <div class="relative">
+          <span class="material-symbols-outlined text-neutral-400 text-lg absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">badge</span>
+          <input class="w-full pl-9 pr-3.5 py-2.5 text-sm bg-neutral-50/50 border border-neutral-200 rounded-lg text-neutral-900 placeholder:text-neutral-400 focus:bg-white focus:border-[#2B1810] focus:ring-1 focus:ring-[#2B1810] outline-none transition-all" id="username" name="username" placeholder="lan.nguyen@coffeeflow.vn" required="" type="text" value="lan.nguyen@coffeeflow.vn">
+        </div>
+      </div>
+
+      <!-- Password Input -->
+      <div class="space-y-1.5">
+        <div class="flex items-center justify-between">
+          <label class="block text-xs font-semibold text-neutral-700" for="password">
+            Mật khẩu
+          </label>
+          <button class="text-xs text-neutral-500 hover:text-neutral-900 transition-colors" onclick="showSupportModal()" type="button">
+            Quên mật khẩu?
+          </button>
+        </div>
+        <div class="relative">
+          <span class="material-symbols-outlined text-neutral-400 text-lg absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">lock</span>
+          <input class="w-full pl-9 pr-10 py-2.5 text-sm bg-neutral-50/50 border border-neutral-200 rounded-lg text-neutral-900 placeholder:text-neutral-400 focus:bg-white focus:border-[#2B1810] focus:ring-1 focus:ring-[#2B1810] outline-none transition-all" id="password" name="password" placeholder="Nhập mật khẩu..." required="" type="password" value="••••••••••••">
+          <button aria-label="Hiện/ẩn mật khẩu" class="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-700 transition-colors flex items-center" id="togglePasswordBtn" onclick="togglePasswordVisibility()" type="button">
+            <span class="material-symbols-outlined text-lg" id="eyeIcon">visibility</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Remember session checkbox -->
+      <div class="flex items-center justify-between pt-1">
+        <label class="flex items-center gap-2 cursor-pointer select-none text-xs text-neutral-600">
+          <input checked="" class="w-4 h-4 rounded border-neutral-300 text-[#2B1810] focus:ring-[#2B1810] cursor-pointer" id="rememberDevice" type="checkbox">
+          <span class="">Ghi nhớ phiên đăng nhập</span>
+        </label>
+        <span class="text-[11px] font-medium text-neutral-400 uppercase tracking-wider">POS #01</span>
+      </div>
+
+      <!-- Submit Button -->
+      <button class="w-full mt-2 py-2.5 px-4 rounded-lg bg-[#2B1810] hover:bg-[#3D2318] text-white text-sm font-semibold tracking-wide transition-colors flex items-center justify-center gap-2 shadow-sm active:scale-[0.99]" id="submitBtn" type="submit">
+        <span class="">Đăng nhập</span>
+        <span class="material-symbols-outlined text-base">arrow_forward</span>
+      </button>
+    </form>
+
+    <!-- Demo Quick Switch -->
+    <div class="mt-6 pt-5 border-t border-neutral-100">
+      <div class="flex items-center justify-between mb-2.5">
+        <span class="text-[11px] font-medium text-neutral-400 uppercase tracking-wider">Tài khoản mẫu</span>
+        <span class="text-[11px] text-neutral-400">Demo</span>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <button class="px-3 py-2 text-left rounded-lg border border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50 transition-all text-xs flex flex-col gap-0.5" onclick="fillDemoAccount('lan.nguyen@coffeeflow.vn', 'Quản lý cơ sở')" type="button">
+          <span class="font-medium text-neutral-800">Quản lý</span>
+          <span class="text-[11px] text-neutral-400 truncate">lan.nguyen@...</span>
+        </button>
+        <button class="px-3 py-2 text-left rounded-lg border border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50 transition-all text-xs flex flex-col gap-0.5" onclick="fillDemoAccount('quynh.barista@coffeeflow.vn', 'Thu ngân quầy')" type="button">
+          <span class="font-medium text-neutral-800">Thu ngân</span>
+          <span class="text-[11px] text-neutral-400 truncate">quynh.barista@...</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Live Notification Toast -->
+    <div class="hidden mt-4 p-2.5 rounded-lg bg-neutral-100 border border-neutral-200 text-xs text-neutral-700 items-center gap-2" id="statusToast">
+      <span class="material-symbols-outlined text-sm text-neutral-700" id="toastIcon">check_circle</span>
+      <span id="toastMessage" class="">Tài khoản mẫu đã được chọn.</span>
+    </div>
+  </div>
+
+  <!-- Subtle Minimal Footer -->
+  <div class="mt-6 flex items-center justify-center gap-4 text-xs text-neutral-400">
+    <span class="">CoffeeFlow v2.4.0</span>
+    <span class="">•</span>
+    <span class="">Hỗ trợ: 1900 6886</span>
+  </div>
+</div>
+<!-- Modal / Dialog for Support -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden items-center justify-center p-space-md" id="supportModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-md w-full p-6 shadow-2xl">
+<div class="flex items-center justify-between mb-space-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Cấp lại mã PIN ca trực</h3>
+<button class="text-outline hover:text-on-surface p-1 rounded-lg" onclick="hideSupportModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+        Theo quy định an toàn chuỗi quán, nhân viên vui lòng liên hệ trực tiếp Quản lý ca trực tại chi nhánh hoặc gửi mã yêu cầu xác minh qua bộ phận vận hành nội bộ.
+      </p>
+<div class="bg-surface-container-low p-space-md rounded-lg mb-space-lg">
+<p class="font-label-sm text-label-sm text-secondary uppercase">Hotline nội bộ 24/7</p>
+<p class="font-currency-display text-currency-display text-primary">1900 6886 (Nhánh 1)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Thời gian phản hồi thông thường: &lt; 2 phút</p>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-primary text-on-primary font-headline-sm text-headline-sm shadow-sm" onclick="hideSupportModal()">
+        Đã hiểu, quay lại
+      </button>
+</div>
+</div>
+</div>
+<script>
+  function togglePasswordVisibility() {
+    const passwordInput = document.getElementById('password');
+    const eyeIcon = document.getElementById('eyeIcon');
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      eyeIcon.textContent = 'visibility_off';
+    } else {
+      passwordInput.type = 'password';
+      eyeIcon.textContent = 'visibility';
+    }
+  }
+
+  function fillDemoAccount(email, roleTitle) {
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    usernameInput.value = email;
+    passwordInput.value = 'coffee2025pass';
+
+    showToast(`Đã chuyển sang vai trò: ${roleTitle}`);
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById('statusToast');
+    const msgElem = document.getElementById('toastMessage');
+    msgElem.textContent = message;
+    toast.classList.remove('hidden');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+    }, 3500);
+  }
+
+  function handleShiftLogin() {
+    const submitBtn = document.getElementById('submitBtn');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = `
+      <span class="material-symbols-outlined animate-spin text-xl">progress_activity</span>
+      <span>Đang đồng bộ ca trực...</span>
+    `;
+    submitBtn.disabled = true;
+
+    setTimeout(() => {
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+      showToast('Đăng nhập thành công! Đang tải dữ liệu bàn và menu POS...');
+    }, 1200);
+  }
+
+  function showSupportModal() {
+    const modal = document.getElementById('supportModal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function hideSupportModal() {
+    const modal = document.getElementById('supportModal');
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+  }
+</script></main>
+
+</body></html>

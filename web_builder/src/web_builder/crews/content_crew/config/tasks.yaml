@@ -1,0 +1,481 @@
+# ==============================================================================
+# tasks.yaml - Autonomous Software Engineering Work Breakdown Structure & Tasks
+# Standardized according to AGENTS.md, docs/, design/, plans/, state/, and qa/
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# STAGE 1: BA Requirement Analysis & Atomic Task Decomposition
+# ------------------------------------------------------------------------------
+ba_decomposition_task:
+  description: >
+    Execute the assigned task using its specification as the work contract.
+
+    Mandatory workflow:
+    1. Read AGENTS.md.
+    2. Read the assigned task file and all referenced specifications:
+       - docs/PRD.md (Product requirements and scope)
+       - docs/ARCHITECTURE.md (System architecture, stack and components)
+       - docs/DATA_MODEL.md (Entities, relationships, constraints, migrations)
+       - docs/API_CONTRACTS.md (Endpoints, schemas, validations, errors, examples)
+       - docs/BUSINESS_RULES.md (Business rules, formulas, and edge cases)
+       - design/DESIGN_SYSTEM.md (Colors, typography, spacing, components, POS layout)
+       - plans/IMPLEMENT_PLAN.md (Milestones, dependencies, implementation sequence)
+       - plans/TASKS.md (Task list with IDs, owners, statuses, acceptance criteria)
+       - qa/TEST_PLAN.md (Test strategy and acceptance criteria)
+    3. Inspect the current repository, existing changes, and state files (state/PROJECT_STATE.md, state/HANDOFF.md).
+    4. Resolve dependencies, identify missing specifications, and align with milestone roadmaps.
+    5. Implement only the authorized scope: Decompose '{target_phase}' (Scope: {phase_scope}) into atomic sub-tasks:
+       - Task BE-1 (Models, Schemas & Data Contracts): Database models, migration scripts, Pydantic/DTO schemas. Enforce Zero-Float precision for currency.
+       - Task BE-2 (Business Logic & Services): Domain services and business logic. Enforce ACID transactions, snapshot pricing, and data integrity.
+       - Task BE-3 (API Routers, Auth & Tests): REST API endpoints, RBAC dependencies, and automated unit/integration tests (pytest).
+       - Task FE-1 (Types & API Client Services): TypeScript interfaces matching backend schemas 1:1, authenticated API client services.
+       - Task FE-2 (UI Pages, Components & POS Layout): Responsive components adhering to design/DESIGN_SYSTEM.md and Stitch specifications.
+       - Task QA-1 (Acceptance Verification Gate): Concrete, testable acceptance criteria from qa/TEST_PLAN.md.
+    6. Verify every acceptance criterion against project contracts.
+    7. Report actual work breakdown structure and changed files.
+    8. Prepare a structured handoff: Update state/PROJECT_STATE.md and record specifications in state/HANDOFF.md.
+
+    Do not invent missing requirements.
+    Do not claim unverified success.
+    Do not overwrite unrelated changes.
+
+    Assigned task: {target_phase} - Architectural Analysis & Atomic Decomposition
+    Task specification: docs/PRD.md & plans/IMPLEMENT_PLAN.md
+    State file: state/PROJECT_STATE.md
+    Handoff file: state/HANDOFF.md
+
+    REQUIRED OUTPUT FORMAT:
+    Output a detailed Markdown execution report ending with a SINGLE fenced JSON code block with the EXACT schema:
+    ```json
+    {
+      "phase_name": "{target_phase}",
+      "summary": "High-level architectural summary of the phase",
+      "backend_tasks": [
+        {
+          "task_id": "BE-1",
+          "title": "Models, Schemas & Data Contracts",
+          "target_files": ["backend/app/models/...", "backend/app/schemas/..."],
+          "details": "Specific entity fields, schema contracts, migration scripts"
+        },
+        {
+          "task_id": "BE-2",
+          "title": "Business Logic & Services (ACID & Precision)",
+          "target_files": ["backend/app/services/..."],
+          "details": "Domain service logic, transaction orchestration, business invariants"
+        },
+        {
+          "task_id": "BE-3",
+          "title": "API Routers, Security & Tests",
+          "target_files": ["backend/app/api/v1/...", "backend/tests/..."],
+          "details": "Endpoints, HTTP methods, RBAC rules, automated test cases"
+        }
+      ],
+      "frontend_tasks": [
+        {
+          "task_id": "FE-1",
+          "title": "TypeScript Types & API Services",
+          "target_files": ["frontend/src/types/...", "frontend/src/services/..."],
+          "details": "TypeScript interfaces matching backend schemas, API methods using api client"
+        },
+        {
+          "task_id": "FE-2",
+          "title": "UI Pages, Components & POS Layout",
+          "target_files": ["frontend/src/pages/...", "frontend/src/components/..."],
+          "details": "POS screen layout, Navigation, Header, Design system tokens"
+        }
+      ],
+      "acceptance_criteria": [
+        "Backend tests pass with 0 failures and 0 errors",
+        "npm run build passes with 0 TypeScript/Vite errors",
+        "Specific business rule criteria from qa/TEST_PLAN.md"
+      ]
+    }
+    ```
+  expected_output: >
+    Structured execution report containing:
+    - Task ID and status
+    - Implementation summary
+    - Changed files
+    - Acceptance criteria and verification evidence
+    - Commands and actual test results
+    - Deviations, blockers, and next actions
+    - Valid JSON block containing the decomposed atomic tasks
+  agent: ba
+
+# Legacy alias for backward compatibility
+design_analysis_task:
+  description: >
+    Execute the assigned task using its specification as the work contract.
+
+    Mandatory workflow:
+    1. Read AGENTS.md.
+    2. Read docs/PRD.md, docs/ARCHITECTURE.md, and plans/IMPLEMENT_PLAN.md.
+    3. Inspect the current repository and existing changes.
+    4. Resolve dependencies and identify missing information.
+    5. Implement only the authorized scope for {target_phase}.
+    6. Verify every acceptance criterion.
+    7. Report actual test results and changed files.
+    8. Prepare a structured handoff in state/HANDOFF.md.
+
+    Do not invent missing requirements.
+    Do not claim unverified success.
+    Do not overwrite unrelated changes.
+
+    Assigned task: {target_phase} - Architectural Analysis
+    Task specification: docs/PRD.md & plans/IMPLEMENT_PLAN.md
+    State file: state/PROJECT_STATE.md
+  expected_output: >
+    Structured execution report containing:
+    - Task ID and status
+    - Implementation summary
+    - Changed files
+    - Acceptance criteria and verification evidence
+    - Commands and actual test results
+    - Deviations, blockers, and next actions
+  agent: ba
+
+
+# ------------------------------------------------------------------------------
+# STAGE 2: BACKEND TIERED ATOMIC EXECUTION (BE-1 -> BE-2 -> BE-3)
+# ------------------------------------------------------------------------------
+backend_contract_task:
+  description: >
+    Execute the assigned task using its specification as the work contract.
+
+    Mandatory workflow:
+    1. Read AGENTS.md.
+    2. Read the assigned task file and all referenced specifications:
+       - docs/DATA_MODEL.md (Entities, relationships, constraints, migrations)
+       - docs/API_CONTRACTS.md (Endpoints, schemas, validations)
+       - docs/ARCHITECTURE.md (Package layout, database configuration)
+       - plans/TASKS.md (Task definition and criteria)
+       - state/HANDOFF.md (Handoff from BA)
+    3. Inspect the current repository and existing changes in 'backend/'.
+    4. Resolve dependencies (ORM models, Pydantic schemas, migration scripts).
+    5. Implement only the authorized scope:
+       - Database Models, Pydantic Request/Response schemas, and migration files.
+       - Precision Rule: All monetary fields MUST strictly use integer minor units (VND) or Decimal (Zero-Float rule).
+       - Write all source files directly to disk using `write_file`.
+    6. Verify every acceptance criterion:
+       - Execute syntax and schema checks to verify 0 compilation or import errors.
+    7. Report actual test results and changed files.
+    8. Prepare a structured handoff:
+       - Update state/PROJECT_STATE.md with task status.
+       - Record completed contracts in state/HANDOFF.md for BE-2 (Service layer).
+
+    Do not invent missing requirements.
+    Do not claim unverified success.
+    Do not overwrite unrelated changes.
+
+    Assigned task: {target_phase} - BE-1: Models, Schemas & Data Contracts
+    Task specification: plans/TASKS.md & docs/DATA_MODEL.md
+    State file: state/PROJECT_STATE.md
+    Handoff file: state/HANDOFF.md
+  expected_output: >
+    Structured execution report containing:
+    - Task ID and status
+    - Implementation summary
+    - Changed files
+    - Acceptance criteria and verification evidence
+    - Commands and actual test results
+    - Deviations, blockers, and next actions
+  agent: backend
+
+backend_service_task:
+  description: >
+    Execute the assigned task using its specification as the work contract.
+
+    Mandatory workflow:
+    1. Read AGENTS.md.
+    2. Read the assigned task file and all referenced specifications:
+       - docs/BUSINESS_RULES.md (Business rules, calculations, ACID constraints)
+       - docs/DATA_MODEL.md (Entity relations and state transitions)
+       - docs/API_CONTRACTS.md (Schemas and service operations)
+       - state/HANDOFF.md (Contracts from BE-1)
+    3. Inspect the current repository and existing changes in 'backend/'.
+    4. Resolve dependencies and identify missing information.
+    5. Implement only the authorized scope:
+       - Service Layer & Business Logic:
+         * Encapsulate domain rules in service functions/classes.
+         * ACID Integrity: Multi-step mutations (e.g. order confirmation + stock deduction) execute in a single atomic transaction.
+         * Concurrency protection: Use concurrency locks (e.g. SELECT FOR UPDATE) when mutating shared inventory.
+         * Enforce price snapshots, error handling, and Zero-Float precision.
+       - Write all source files directly to disk using `write_file`.
+    6. Verify every acceptance criterion:
+       - Verify that service layer imports cleanly and satisfies business invariants.
+    7. Report actual test results and changed files.
+    8. Prepare a structured handoff:
+       - Update state/PROJECT_STATE.md with task status.
+       - Record completed services in state/HANDOFF.md for BE-3 (Routers & Tests).
+
+    Do not invent missing requirements.
+    Do not claim unverified success.
+    Do not overwrite unrelated changes.
+
+    Assigned task: {target_phase} - BE-2: Business Logic & Services (ACID & Precision)
+    Task specification: plans/TASKS.md & docs/BUSINESS_RULES.md
+    State file: state/PROJECT_STATE.md
+    Handoff file: state/HANDOFF.md
+  expected_output: >
+    Structured execution report containing:
+    - Task ID and status
+    - Implementation summary
+    - Changed files
+    - Acceptance criteria and verification evidence
+    - Commands and actual test results
+    - Deviations, blockers, and next actions
+  agent: backend
+
+backend_controller_task:
+  description: >
+    Execute the assigned task using its specification as the work contract.
+
+    Mandatory workflow:
+    1. Read AGENTS.md.
+    2. Read the assigned task file and all referenced specifications:
+       - docs/API_CONTRACTS.md (REST endpoints, HTTP methods, validation, response wrappers)
+       - docs/ARCHITECTURE.md (Security, RBAC dependencies, router conventions)
+       - qa/TEST_PLAN.md (Test strategy and coverage requirements)
+       - state/HANDOFF.md (Services from BE-2)
+    3. Inspect the current repository, routers, RBAC dependencies, and test suites.
+    4. Resolve dependencies and verify endpoint routing, schema validation, and role authorization.
+    5. Implement only the authorized scope:
+       - FastAPI Routers in 'backend/app/api/v1/' with proper status codes.
+       - RBAC enforcement: Ensure Cashier receives 403 on management endpoints.
+       - Idempotency guard for payments and order confirmation.
+       - Automated Unit & Integration Tests in 'backend/tests/'.
+       - Write all source files directly to disk using `write_file`, `replace_lines`, or `patch_file`.
+    6. Verify every acceptance criterion:
+       - Execute `run_command(command="pytest", cwd="backend")` and verify 0 failures and 0 errors.
+       - If any test fails, you MUST modify the offending code using `replace_lines`, `patch_file`, or `write_file` before re-testing. The ANTI-LOOP GUARD blocks re-testing on unmodified files.
+    7. Report actual test results and changed files.
+    8. Prepare a structured handoff:
+       - Update state/PROJECT_STATE.md with task status.
+       - Record verified API endpoints and contracts in state/HANDOFF.md for Frontend team.
+
+    Do not invent missing requirements.
+    Do not claim unverified success.
+    Do not overwrite unrelated changes.
+
+    Assigned task: {target_phase} - BE-3: API Routers, Security & Tests
+    Task specification: plans/TASKS.md & docs/API_CONTRACTS.md
+    State file: state/PROJECT_STATE.md
+    Handoff file: state/HANDOFF.md
+  expected_output: >
+    Structured execution report containing:
+    - Task ID and status
+    - Implementation summary
+    - Changed files
+    - Acceptance criteria and verification evidence
+    - Commands and actual test results (pytest)
+    - Deviations, blockers, and next actions
+  agent: backend
+
+# Legacy alias for backward compatibility
+backend_coding_task:
+  description: >
+    Execute the assigned task using its specification as the work contract.
+
+    Mandatory workflow:
+    1. Read AGENTS.md.
+    2. Read docs/DATA_MODEL.md, docs/API_CONTRACTS.md, and docs/BUSINESS_RULES.md.
+    3. Inspect the current repository and existing changes in backend/.
+    4. Resolve dependencies and identify missing information.
+    5. Implement only authorized scope: Layered architecture, ACID, Zero-Float precision.
+    6. Verify every acceptance criterion via automated tests.
+    7. Report actual test results and changed files.
+    8. Prepare a structured handoff in state/HANDOFF.md and state/PROJECT_STATE.md.
+
+    Do not invent missing requirements.
+    Do not claim unverified success.
+    Do not overwrite unrelated changes.
+
+    Assigned task: {target_phase} - Backend Engineering
+    Task specification: plans/TASKS.md
+    State file: state/PROJECT_STATE.md
+  expected_output: >
+    Structured execution report containing:
+    - Task ID and status
+    - Implementation summary
+    - Changed files
+    - Acceptance criteria and verification evidence
+    - Commands and actual test results
+    - Deviations, blockers, and next actions
+  agent: backend
+
+
+# ------------------------------------------------------------------------------
+# STAGE 3: FRONTEND CONTRACT-DRIVEN EXECUTION (FE-1 -> FE-2)
+# ------------------------------------------------------------------------------
+frontend_contract_task:
+  description: >
+    Execute the assigned task using its specification as the work contract.
+
+    Mandatory workflow:
+    1. Read AGENTS.md.
+    2. Read the assigned task file and all referenced specifications:
+       - docs/API_CONTRACTS.md (Endpoint contracts, request/response schema definitions)
+       - docs/DATA_MODEL.md (Field types, nullability, enums)
+       - state/HANDOFF.md (Verified backend endpoints and contracts from BE-3)
+    3. Inspect the current repository and existing changes in 'frontend/src/types/' and 'frontend/src/services/'.
+    4. Resolve dependencies and ensure 1:1 synchronization with backend schemas.
+    5. Implement only the authorized scope:
+       - TypeScript interfaces in 'frontend/src/types/*.ts' matching backend schemas 1:1.
+       - API Client Services in 'frontend/src/services/*.ts' importing authenticated api client.
+       - Write all source files directly to disk using `write_file`.
+    6. Verify every acceptance criterion and contract compatibility.
+    7. Report actual test results and changed files.
+    8. Prepare a structured handoff:
+       - Update state/PROJECT_STATE.md with task status.
+       - Record verified types and service clients in state/HANDOFF.md for FE-2 (UI implementation).
+
+    Do not invent missing requirements.
+    Do not claim unverified success.
+    Do not overwrite unrelated changes.
+
+    Assigned task: {target_phase} - FE-1: TypeScript Types & API Services
+    Task specification: plans/TASKS.md & docs/API_CONTRACTS.md
+    State file: state/PROJECT_STATE.md
+    Handoff file: state/HANDOFF.md
+  expected_output: >
+    Structured execution report containing:
+    - Task ID and status
+    - Implementation summary
+    - Changed files
+    - Acceptance criteria and verification evidence
+    - Commands and actual test results
+    - Deviations, blockers, and next actions
+  agent: frontend
+
+frontend_ui_task:
+  description: >
+    Execute the assigned task using its specification as the work contract.
+
+    Mandatory workflow:
+    1. Read AGENTS.md.
+    2. MANDATORY DESIGN INSPECTION STEP:
+       - Read design/DESIGN_SYSTEM.md to understand the Stitch design tokens, colors, and screen directory.
+       - You MUST use `read_file` to inspect ONLY the specific Stitch mockup file `code.html` in '{design_dir}' relevant to the page(s) required in {target_phase}:
+         * If implementing Login: design/screen_login/code.html
+         * If implementing POS Cashier / Cart / Checkout: design/screen_pos_cashier/code.html
+         * If implementing Manager Dashboard: design/screen_dashboard_overview/code.html
+         * If implementing Orders: design/screen_orders_management/code.html
+         * If implementing Menu & Products: design/screen_products_menu/code.html
+         * If implementing Inventory & Stock: design/screen_inventory_stock/code.html
+         * If implementing Reports: design/screen_reports_revenue/code.html
+         (DO NOT read all 7 screen mockups at once to prevent token limit truncation).
+       - Read the HTML structure, color classes, typography classes, spacing tokens, and Material Symbols Outlined icons from that specific `code.html`.
+       - DO NOT invent generic or dark themes (NO bg-stone-900, NO bg-stone-950).
+       - ALWAYS use the warm cafe theme tokens from Stitch (bg-background, bg-surface-container-*, text-primary, bg-primary, text-on-primary, etc.).
+       - Use Google Material Symbols Outlined icons (<span className="material-symbols-outlined">...</span>) matching the Stitch design.
+       - Read state/HANDOFF.md for verified API endpoints and types from FE-1.
+    3. Inspect the current repository, layout components (Sidebar, TopHeader, POS Layout), and existing pages.
+    4. Resolve dependencies and connect UI components with authenticated API services.
+    5. Implement only the authorized scope:
+       - Responsive React/TypeScript pages, components, and modals inheriting directly from the Stitch code.html markup.
+       - Mandatory API Integration: In pages (Login, CashierPOS, ManagerDashboard), you MUST import `api` from `../services/api`. Wire dynamic state using React `useEffect` to fetch real data from backend endpoints (`api.getCategories()`, `api.getProducts()`, `api.createOrder()`, `api.getOrders()`). Never leave pages with only hardcoded static mock items. Always include resilient fallback to initial defaults if the backend is offline.
+       - Format all currency in Zero-Float VND format (e.g. 45.000 ₫, never USD $).
+       - Write all source files directly to disk using `write_file`, `replace_lines`, or `patch_file`.
+    6. Verify every acceptance criterion:
+       - Execute `run_command(command="npm run build", cwd="frontend")` and verify 0 TypeScript and Vite compilation errors.
+       - If any build error occurs, you MUST modify the offending code using `replace_lines`, `patch_file`, or `write_file` before re-running the build. The ANTI-LOOP GUARD blocks re-running on unmodified files.
+    7. Report actual test results and changed files.
+    8. Prepare a structured handoff:
+       - Update state/PROJECT_STATE.md with task status.
+       - Record completed UI components and routes in state/HANDOFF.md for QA verification.
+
+    Do not invent missing requirements.
+    Do not claim unverified success.
+    Do not overwrite unrelated changes.
+
+    Assigned task: {target_phase} - FE-2: UI Pages, Components & Design System Layout
+    Task specification: plans/TASKS.md & design/DESIGN_SYSTEM.md
+    State file: state/PROJECT_STATE.md
+    Handoff file: state/HANDOFF.md
+  expected_output: >
+    Structured execution report containing:
+    - Task ID and status
+    - Implementation summary
+    - Changed files
+    - Acceptance criteria and verification evidence
+    - Commands and actual test results (npm run build)
+    - Deviations, blockers, and next actions
+  agent: frontend
+
+# Legacy alias for backward compatibility
+frontend_coding_task:
+  description: >
+    Execute the assigned task using its specification as the work contract.
+
+    Mandatory workflow:
+    1. Read AGENTS.md.
+    2. Read design/DESIGN_SYSTEM.md and use `read_file` to read the corresponding Stitch mockup in design/screen_*/code.html.
+    3. Inspect current repository and existing changes in frontend/.
+    4. Resolve dependencies and connect with docs/API_CONTRACTS.md.
+    5. Implement only authorized scope: Inherit HTML structure, Tailwind CSS classes, and Material Symbols from Stitch code.html. Enforce Zero-Float VND currency.
+    6. Verify every acceptance criterion via 'npm run build'.
+    7. Report actual test results and changed files.
+    8. Prepare a structured handoff in state/HANDOFF.md and state/PROJECT_STATE.md.
+
+    Do not invent missing requirements.
+    Do not claim unverified success.
+    Do not overwrite unrelated changes.
+
+    Assigned task: {target_phase} - Frontend Engineering
+    Task specification: plans/TASKS.md & design/DESIGN_SYSTEM.md
+    State file: state/PROJECT_STATE.md
+  expected_output: >
+    Structured execution report containing:
+    - Task ID and status
+    - Implementation summary
+    - Changed files
+    - Acceptance criteria and verification evidence
+    - Commands and actual test results (npm run build)
+    - Deviations, blockers, and next actions
+  agent: frontend
+
+
+# ------------------------------------------------------------------------------
+# STAGE 4: QA VERIFICATION & ACCEPTANCE GATE (QA-1)
+# ------------------------------------------------------------------------------
+qa_verification_task:
+  description: >
+    Execute the assigned task using its specification as the work contract.
+
+    Mandatory workflow:
+    1. Read AGENTS.md.
+    2. Read the assigned task file and all referenced specifications:
+       - qa/TEST_PLAN.md (Test strategy, quality gates, P0 acceptance criteria)
+       - docs/PRD.md (Product acceptance scope)
+       - plans/TASKS.md (Task deliverables and criteria)
+       - state/HANDOFF.md (Implementation handoffs from Backend and Frontend)
+    3. Inspect the current repository, all changed files on disk, and audit for empty or stub files.
+    4. Resolve dependencies and audit backend and frontend implementations against specifications.
+    5. Implement only the authorized scope: Comprehensive verification, regression checks, and quality gate execution.
+    6. Verify every acceptance criterion:
+       - Run backend test suite (pytest) -> Confirm 100% pass, 0 failures, 0 errors.
+       - Run `run_command(command="npm run build", cwd="frontend")` -> Confirm 0 TypeScript / Vite compilation errors.
+       - Audit acceptance criteria defined in BA WBS plan and qa/TEST_PLAN.md.
+    7. Report actual test results, changed files, terminal logs, and quality sign-off verdict.
+    8. Prepare a structured handoff:
+       - Update state/PROJECT_STATE.md with completed phase milestones, resolved blockers, and next actions.
+       - Finalize state/HANDOFF.md for next session or deployment.
+
+    Do not invent missing requirements.
+    Do not claim unverified success.
+    Do not overwrite unrelated changes.
+
+    Assigned task: {target_phase} - QA-1: Verification & Acceptance Sign-Off Gate
+    Task specification: qa/TEST_PLAN.md & plans/TASKS.md
+    State file: state/PROJECT_STATE.md
+    Handoff file: state/HANDOFF.md
+  expected_output: >
+    Structured execution report containing:
+    - Task ID and status (PASSED / BLOCKED)
+    - Implementation summary
+    - Changed files
+    - Acceptance criteria and verification evidence
+    - Commands and actual test results
+    - Deviations, blockers, and next actions
+  agent: qa
+  output_file: output/coding_team_report.md

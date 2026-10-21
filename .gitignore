@@ -1,0 +1,75 @@
+# =========================
+# Environment & Secrets
+# =========================
+.env
+.env.*
+!.env.example
+*.local
+
+# =========================
+# Python & Virtual Environments (CrewAI / Web Builder)
+# =========================
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# =========================
+# Backend - Java / Spring Boot / Maven
+# =========================
+backend/target/
+backend/.mvn/
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+
+# =========================
+# Frontend - React / Vite / Node
+# =========================
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.eslintcache/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Logs, Outputs & Temporary Files
+# =========================
+logs/
+*.log
+output/
+qa_reports/
+scratch/
+
+# =========================
+# IDEs & Editors
+# =========================
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+
+# =========================
+# OS Generated
+# =========================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini

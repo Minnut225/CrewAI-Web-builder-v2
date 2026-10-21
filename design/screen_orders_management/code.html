@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"secondary-fixed-dim":"#ffb689","on-primary":"#ffffff","outline-variant":"#d4c3bc","on-surface":"#231a13","surface-tint":"#765849","error":"#ba1a1a","primary-fixed":"#ffdbcb","surface-container-high":"#f7e5d9","secondary":"#88512a","on-tertiary-container":"#5c9e6a","tertiary-container":"#003013","on-error":"#ffffff","background":"#fff8f5","on-secondary-fixed-variant":"#6c3a15","surface-bright":"#fff8f5","tertiary":"#001907","inverse-primary":"#e5beac","primary-fixed-dim":"#e5beac","outline":"#82746f","secondary-container":"#fdb385","error-container":"#ffdad6","surface":"#fff8f5","inverse-on-surface":"#ffede3","on-tertiary":"#ffffff","tertiary-fixed-dim":"#92d69d","surface-variant":"#f1dfd4","on-primary-fixed":"#2b160b","surface-container-highest":"#f1dfd4","on-surface-variant":"#50443f","on-error-container":"#93000a","on-background":"#231a13","inverse-surface":"#392e27","on-primary-container":"#ab8878","primary-container":"#3a2317","secondary-fixed":"#ffdbc7","surface-container-lowest":"#ffffff","surface-dim":"#e9d7cb","on-tertiary-fixed-variant":"#0a5226","on-primary-fixed-variant":"#5c4133","surface-container":"#fdeadf","primary":"#220f05","on-secondary":"#ffffff","on-secondary-fixed":"#311300","on-tertiary-fixed":"#00210b","tertiary-fixed":"#adf3b8","on-secondary-container":"#78431e","surface-container-low":"#fff1e9"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-2xl":"3rem","space-xs":"0.25rem","gutter":"1rem","gutter-desktop":"1.5rem","margin":"1rem","space-sm":"0.5rem","space-xl":"2rem","space-md":"0.75rem","space-base":"1rem","margin-desktop":"2rem","space-2xs":"0.125rem","space-lg":"1.5rem"},"fontFamily":{"label-sm":["Plus Jakarta Sans"],"currency-cell":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"hotkey-kbd":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"currency-display":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"]},"fontSize":{"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"currency-cell":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"hotkey-kbd":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"700"}],"title-md":["15px",{"lineHeight":"22px","fontWeight":"600"}],"display-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"700"}],"currency-display":["22px",{"lineHeight":"28px","letterSpacing":"0.01em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"label-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="px-space-lg py-space-lg flex items-center gap-space-md"><img alt="CoffeeFlow Brand Icon" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VYpcQfKlSDYqI_THxN88RkHsX9_79frcvuyZoM4NcSksYZ-lqQ8AHc2p2db805OSiQxMlrGGijm1oUus0-D6mxhODKWYwjnrGX2a5SqUIXpuEC-rxnActJu8vC5kAnv7G3A6ffqUZ2XyCiUSz8_-NHw9IS47G5vlARyWX6p-RUMLVTFvtYsO0AwLb0mugMvbUaSUFqMPHEx-XVk-YPSik07Y0c--EDpkx_InjVweZahY2-UhgatxZTTvNZ"/><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-primary tracking-tight truncate">CoffeeFlow</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Chi nhánh 01 - Đặng Văn Ngữ</span></div></div><div class="px-space-md py-space-xs"><span class="px-space-sm font-label-sm text-label-sm uppercase text-outline tracking-wider">Vận hành &amp; Bán hàng</span><nav class="mt-space-xs flex flex-col gap-space-2xs" data-active-classes="bg-primary text-on-primary font-title-md"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="tong-quan" href="#"><span class="truncate">Tổng quan</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="ban-hang-pos" href="#"><span class="truncate">Bán hàng (POS)</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="don-hang" href="#"><span class="truncate">Đơn hàng</span></a></nav></div><div class="px-space-md pt-space-md"><span class="px-space-sm font-label-sm text-label-sm uppercase text-outline tracking-wider">Quản trị cửa hàng</span><nav class="mt-space-xs flex flex-col gap-space-2xs" data-active-classes="bg-primary text-on-primary font-title-md"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="san-pham" href="#"><span class="truncate">Sản phẩm</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="danh-muc" href="#"><span class="truncate">Danh mục</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="kho-nguyen-lieu" href="#"><span class="truncate">Kho nguyên liệu</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="cong-thuc-pha-che" href="#"><span class="truncate">Công thức pha chế</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="bao-cao-doanh-thu" href="#"><span class="truncate">Báo cáo doanh thu</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="nhat-ky-hoat-dong" href="#"><span class="truncate">Nhật ký hoạt động</span></a></nav></div></div><div class="p-space-md mb-space-sm"><nav class="flex flex-col gap-space-2xs" data-active-classes="bg-primary text-on-primary font-title-md"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="cai-dat" href="#"><span class="truncate">Cài đặt</span></a></nav></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40"><div class="w-full h-16 px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-body-sm"><span class="text-outline font-medium">CoffeeFlow</span><span class="text-outline-variant">/</span><span class="font-semibold text-primary">Quản trị hệ thống</span></div><div class="h-4 w-px bg-outline-variant"></div><div class="inline-flex items-center gap-space-xs bg-surface-container-high px-space-md py-space-2xs rounded-full"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-on-surface">Ca sáng (06:30 - 14:30) • Đang mở</span></div></div><div class="flex items-center gap-space-md"><div class="relative w-64"><span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full pl-10 pr-space-md py-space-2xs rounded-lg bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-body-sm shadow-[0_1px_3px_rgba(43,24,16,0.04)] focus:outline-none focus:ring-2 focus:ring-secondary/30" placeholder="Tìm kiếm đơn, món..." type="search"/></div><div class="h-6 w-px bg-outline-variant"></div><button aria-label="Thông báo" class="relative p-space-xs rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs cursor-pointer"><img alt="Nguyễn Mai Lan" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSrpK8A9iefIepQnXCta_LUCW9hUHjgzAvpO7ZxRe2_-n73bSKsdA6LM6GcXCu7EQ6Fu_xm4WHsx3OS6ahbY4-TYHpf6RKbUGqpTrY845Zmjl7hhQsYD1G5-wVFRWLxx2rAF85waFPENQf3Yv2xUCR36o95R_ApzylW-fKJ4hhBnCKp8Ke-WT2nMGVSu4jXXzwY384THvOc8Wy2fS4s1uP68NyMR8KXaV05iHdwRCa3N8ZyLit636AUw"/><div class="hidden sm:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Nguyễn Mai Lan</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Quản lý / Manager</span></div></div></div></div></header><main class="relative w-full pt-16 bg-background flex-1 px-space-lg py-space-lg"><div class="flex flex-col w-full">
+<!-- Top Operational Header Metric Deck -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-lg mb-space-xl">
+<div>
+<div class="flex items-center gap-space-xs text-body-sm text-outline mb-space-2xs">
+<span class="font-medium text-on-surface-variant">CoffeeFlow OS</span>
+<span>/</span>
+<span class="text-secondary font-semibold">Vận hành</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight">Quản lý đơn hàng</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs flex items-center gap-space-sm">
+<span>Tổng cộng <strong class="text-primary font-title-md">142 đơn</strong> hôm nay</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span>Doanh thu tạm tính: <strong class="text-secondary font-title-md">14.850.000 ₫</strong></span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="inline-flex items-center gap-space-2xs text-body-sm text-tertiary-fixed-dim bg-tertiary-container px-space-xs py-0.5 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+          Đồng bộ thời gian thực
+        </span>
+</p>
+</div>
+<!-- Quick Tool Actions -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="inline-flex items-center gap-space-xs bg-surface-container-lowest text-on-surface px-space-md py-space-sm rounded-lg font-title-md text-title-md shadow-sm hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px] text-secondary">tune</span>
+<span>Bộ lọc nâng cao</span>
+</button>
+<button class="inline-flex items-center gap-space-xs bg-surface-container-lowest text-on-surface px-space-md py-space-sm rounded-lg font-title-md text-title-md shadow-sm hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px] text-outline">file_download</span>
+<span>Xuất Excel</span>
+</button>
+<button class="inline-flex items-center gap-space-xs bg-primary-container text-on-primary px-space-lg py-space-sm rounded-lg font-title-md text-title-md shadow-md hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Tạo đơn tại quầy</span>
+</button>
+</div>
+</div>
+<!-- Interactive Search & Multi-filter Strip -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-lg flex flex-col lg:flex-row gap-space-md items-stretch lg:items-center justify-between">
+<div class="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm">
+<!-- Search input -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full pl-10 pr-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-secondary/40" placeholder="Mã đơn (#CF-1043), số bàn..." type="search" value="#CF-1043"/>
+</div>
+<!-- Date selector -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[18px]">calendar_today</span>
+<select class="w-full appearance-none pl-10 pr-space-lg py-space-xs rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-secondary/40 cursor-pointer">
+<option selected="">Hôm nay (24/05/2025)</option>
+<option>Hôm qua (23/05/2025)</option>
+<option>7 ngày gần đây</option>
+<option>Tùy chỉnh khoảng ngày...</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-sm top-1/2 -translate-y-1/2 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+<!-- Status dropdown -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[18px]">filter_alt</span>
+<select class="w-full appearance-none pl-10 pr-space-lg py-space-xs rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-secondary/40 cursor-pointer">
+<option value="all">Trạng thái: Tất cả</option>
+<option selected="" value="paid">Đã thanh toán (78)</option>
+<option value="brewing">Đang pha chế (12)</option>
+<option value="completed">Hoàn tất (49)</option>
+<option value="refunded">Đã hủy/Hoàn tiền (3)</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-sm top-1/2 -translate-y-1/2 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+<!-- Payment Method dropdown -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[18px]">payments</span>
+<select class="w-full appearance-none pl-10 pr-space-lg py-space-xs rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-secondary/40 cursor-pointer">
+<option value="all">Phương thức: Tất cả</option>
+<option value="cash">Tiền mặt</option>
+<option value="vietqr">VietQR Pro</option>
+<option value="card">Thẻ POS</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-sm top-1/2 -translate-y-1/2 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Active Filter Chips Reset -->
+<div class="flex items-center gap-space-xs justify-end shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-space-sm py-1 rounded-md">Bộ lọc: 2 kích hoạt</span>
+<button class="p-1.5 text-outline hover:text-error hover:bg-error-container/30 rounded-lg transition-colors" title="Xóa bộ lọc">
+<span class="material-symbols-outlined text-[18px]">filter_alt_off</span>
+</button>
+</div>
+</div>
+<!-- Main Responsive Split Layout: Orders Grid / Table + Dedicated Detail Panel -->
+<div class="grid grid-cols-1 2xl:grid-cols-12 gap-space-lg items-start">
+<!-- Left Master Table View (7 Cols on wide screen) -->
+<div class="2xl:col-span-7 bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Quick Tabs -->
+<div class="px-space-lg pt-space-md pb-space-xs flex items-center justify-between bg-surface-container-low/40">
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-space-2xs rounded-full font-label-md text-label-md bg-primary-container text-on-primary">
+            Tất cả đơn (142)
+          </button>
+<button class="px-space-md py-space-2xs rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-colors">
+            Tại bàn (86)
+          </button>
+<button class="px-space-md py-space-2xs rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-colors">
+            Mang đi (38)
+          </button>
+<button class="px-space-md py-space-2xs rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-colors">
+            Giao hàng (18)
+          </button>
+</div>
+<div class="text-body-sm font-label-sm text-outline">
+          Trang 1 / 15
+        </div>
+</div>
+<!-- Density Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md">
+<thead class="bg-surface-container font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+<tr>
+<th class="py-space-sm px-space-md font-semibold" scope="col">Mã đơn</th>
+<th class="py-space-sm px-space-md font-semibold" scope="col">Thời gian</th>
+<th class="py-space-sm px-space-md font-semibold" scope="col">Kênh / Bàn</th>
+<th class="py-space-sm px-space-md font-semibold" scope="col">Thu ngân</th>
+<th class="py-space-sm px-space-md font-semibold" scope="col">Món</th>
+<th class="py-space-sm px-space-md font-semibold text-right" scope="col">Tổng tiền</th>
+<th class="py-space-sm px-space-md font-semibold text-center" scope="col">Trạng thái</th>
+<th class="py-space-sm px-space-md font-semibold text-center" scope="col">Thao tác</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-body-sm font-body-sm">
+<!-- Row 1: Active Selected (#CF-1043) -->
+<tr class="bg-surface-container-high/60 transition-colors cursor-pointer" onclick="selectOrder('CF-1043')">
+<td class="py-space-sm px-space-md font-semibold text-secondary">
+<div class="flex items-center gap-space-2xs">
+<span class="w-1.5 h-4 bg-secondary rounded-full"></span>
+<span class="font-title-md text-title-md">#CF-1043</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-on-surface-variant">14:15</td>
+<td class="py-space-sm px-space-md">
+<span class="font-medium text-on-surface">Bàn 03</span>
+<span class="text-label-sm text-outline block">Tầng 1 - Sân trong</span>
+</td>
+<td class="py-space-sm px-space-md text-on-surface font-medium">Quỳnh Anh</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm">4 món</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-currency-cell text-currency-cell text-primary">
+                171.900 ₫
+              </td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm bg-[#EAF5ED] text-[#2E6F40]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2E6F40]"></span>
+                  Đã thanh toán
+                </span>
+</td>
+<td class="py-space-sm px-space-md text-center">
+<div class="flex items-center justify-center gap-space-2xs">
+<button class="p-1 rounded hover:bg-surface-container text-secondary" title="In lại">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-primary" title="Xem chi tiết">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: #CF-1042 (Brewing) -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" onclick="selectOrder('CF-1042')">
+<td class="py-space-sm px-space-md font-semibold text-on-surface">
+<div class="flex items-center gap-space-2xs">
+<span class="w-1.5 h-4 bg-transparent rounded-full"></span>
+<span class="font-title-md text-title-md">#CF-1042</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-on-surface-variant">14:12</td>
+<td class="py-space-sm px-space-md">
+<span class="font-medium text-on-surface">Bàn 04</span>
+<span class="text-label-sm text-outline block">Tầng 1 - Cửa kính</span>
+</td>
+<td class="py-space-sm px-space-md text-on-surface font-medium">Hoàng Nam</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm">2 món</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-currency-cell text-currency-cell text-primary">
+                115.000 ₫
+              </td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm bg-[#FEF6E9] text-[#B4690E]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#B4690E] animate-pulse"></span>
+                  Đang pha chế
+                </span>
+</td>
+<td class="py-space-sm px-space-md text-center">
+<div class="flex items-center justify-center gap-space-2xs">
+<button class="p-1 rounded hover:bg-surface-container text-outline" title="In lại">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-primary" title="Xem chi tiết">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: #CF-1041 (Takeaway) -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" onclick="selectOrder('CF-1041')">
+<td class="py-space-sm px-space-md font-semibold text-on-surface">
+<div class="flex items-center gap-space-2xs">
+<span class="w-1.5 h-4 bg-transparent rounded-full"></span>
+<span class="font-title-md text-title-md">#CF-1041</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-on-surface-variant">14:05</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center gap-1 font-medium text-secondary">
+<span class="material-symbols-outlined text-[16px]">takeout_dining</span>
+                  Mang đi #12
+                </span>
+<span class="text-label-sm text-outline block">Đang đợi quầy trả món</span>
+</td>
+<td class="py-space-sm px-space-md text-on-surface font-medium">Quỳnh Anh</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm">3 món</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-currency-cell text-currency-cell text-primary">
+                148.000 ₫
+              </td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm bg-[#EAF5ED] text-[#2E6F40]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2E6F40]"></span>
+                  Đã thanh toán
+                </span>
+</td>
+<td class="py-space-sm px-space-md text-center">
+<div class="flex items-center justify-center gap-space-2xs">
+<button class="p-1 rounded hover:bg-surface-container text-outline" title="In lại">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-primary" title="Xem chi tiết">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: #CF-1040 (Delivery GrabFood) -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" onclick="selectOrder('CF-1040')">
+<td class="py-space-sm px-space-md font-semibold text-on-surface">
+<div class="flex items-center gap-space-2xs">
+<span class="w-1.5 h-4 bg-transparent rounded-full"></span>
+<span class="font-title-md text-title-md">#CF-1040</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-on-surface-variant">13:58</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center gap-1 font-medium text-on-tertiary-container">
+<span class="material-symbols-outlined text-[16px]">moped</span>
+                  GrabFood #889
+                </span>
+<span class="text-label-sm text-outline block">Tài xế: Nguyễn Văn H.</span>
+</td>
+<td class="py-space-sm px-space-md text-on-surface font-medium">Hoàng Nam</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm">5 món</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-currency-cell text-currency-cell text-primary">
+                245.000 ₫
+              </td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                  Hoàn tất
+                </span>
+</td>
+<td class="py-space-sm px-space-md text-center">
+<div class="flex items-center justify-center gap-space-2xs">
+<button class="p-1 rounded hover:bg-surface-container text-outline" title="In lại">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-primary" title="Xem chi tiết">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: #CF-1039 (Refunded / Cancelled) -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" onclick="selectOrder('CF-1039')">
+<td class="py-space-sm px-space-md font-semibold text-outline">
+<div class="flex items-center gap-space-2xs">
+<span class="w-1.5 h-4 bg-transparent rounded-full"></span>
+<span class="font-title-md text-title-md line-through">#CF-1039</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-on-surface-variant">13:42</td>
+<td class="py-space-sm px-space-md">
+<span class="font-medium text-on-surface">Bàn 08</span>
+<span class="text-label-sm text-outline block">Tầng 2 - Ban công</span>
+</td>
+<td class="py-space-sm px-space-md text-on-surface font-medium">Quỳnh Anh</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm">1 món</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-currency-cell text-currency-cell text-outline line-through">
+                45.000 ₫
+              </td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm bg-[#FDF0ED] text-[#B92B27]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#B92B27]"></span>
+                  Đã hoàn tiền
+                </span>
+</td>
+<td class="py-space-sm px-space-md text-center">
+<div class="flex items-center justify-center gap-space-2xs">
+<button class="p-1 rounded text-outline/50 cursor-not-allowed" disabled="" title="Đã hủy">
+<span class="material-symbols-outlined text-[18px]">block</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-primary" title="Xem nhật ký hoàn tiền">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: #CF-1038 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" onclick="selectOrder('CF-1038')">
+<td class="py-space-sm px-space-md font-semibold text-on-surface">
+<div class="flex items-center gap-space-2xs">
+<span class="w-1.5 h-4 bg-transparent rounded-full"></span>
+<span class="font-title-md text-title-md">#CF-1038</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md text-on-surface-variant">13:30</td>
+<td class="py-space-sm px-space-md">
+<span class="font-medium text-on-surface">Bàn 01</span>
+<span class="text-label-sm text-outline block">Quầy Bar pha chế</span>
+</td>
+<td class="py-space-sm px-space-md text-on-surface font-medium">Hoàng Nam</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm">2 món</span>
+</td>
+<td class="py-space-sm px-space-md text-right font-currency-cell text-currency-cell text-primary">
+                85.000 ₫
+              </td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                  Hoàn tất
+                </span>
+</td>
+<td class="py-space-sm px-space-md text-center">
+<div class="flex items-center justify-center gap-space-2xs">
+<button class="p-1 rounded hover:bg-surface-container text-outline" title="In lại">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-outline hover:text-primary" title="Xem chi tiết">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Footer -->
+<div class="px-space-lg py-space-sm bg-surface-container-low/30 flex items-center justify-between mt-auto">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          Hiển thị <strong>1 - 6</strong> trong số <strong>142</strong> đơn hàng
+        </span>
+<div class="flex items-center gap-space-2xs">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center font-label-md text-label-md bg-primary-container text-on-primary">1</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors">2</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors">3</button>
+<span class="px-1 text-outline">...</span>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors">24</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Side Integrated Order Detail Slide-over / Inspector (5 Cols) -->
+<div class="2xl:col-span-5 bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col relative overflow-hidden">
+<!-- Ambient Card Header with Visual Status Indicator -->
+<div class="flex items-start justify-between pb-space-md border-b-0">
+<div>
+<div class="flex items-center gap-space-sm mb-space-2xs">
+<span class="font-headline-lg text-headline-lg text-primary tracking-tight">#CF-1043</span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full font-label-sm text-label-sm bg-[#EAF5ED] text-[#2E6F40]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2E6F40]"></span>
+              Đã thanh toán
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-space-2xs flex-wrap">
+<span>Tạo lúc: <strong>14:15:02</strong></span>
+<span>•</span>
+<span>Thu ngân: <strong>Quỳnh Anh</strong></span>
+<span>•</span>
+<span class="bg-surface-container-high px-space-xs py-0.5 rounded text-on-surface font-medium">Bàn 03 (Tầng 1)</span>
+</p>
+</div>
+<div class="flex items-center gap-space-2xs">
+<button class="p-space-xs rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Mở rộng toàn màn hình">
+<span class="material-symbols-outlined text-[20px]">fullscreen</span>
+</button>
+<button class="p-space-xs rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Đóng bảng">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- Quick Context Bar (POS Hardware & Customer) -->
+<div class="my-space-md p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</div>
+<div>
+<div class="font-title-md text-title-md text-primary leading-tight">Khách quen: Trần Minh Phúc</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Hạng thành viên VIP Gold (Giảm 10%)</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container-highest px-space-xs py-0.5 rounded text-on-surface-variant">POS Máy #01</span>
+</div>
+<!-- Item Breakdown Section -->
+<div class="flex flex-col gap-space-md mb-space-lg">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Danh sách món (3 loại • 4 phần)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">KDS Barista: <strong class="text-[#2E6F40]">Đã hoàn thành</strong></span>
+</div>
+<div class="space-y-space-sm">
+<!-- Item 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<span class="w-6 h-6 rounded-md bg-secondary text-on-secondary font-title-md text-title-md flex items-center justify-center shrink-0">2x</span>
+<div>
+<h4 class="font-title-md text-title-md text-primary leading-snug">Cà phê Muối Cố Đô</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Size L • 50% Đường • 70% Đá • Ít ngọt kem béo riêng</p>
+</div>
+</div>
+<span class="font-currency-cell text-currency-cell text-primary font-semibold whitespace-nowrap">100.000 ₫</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<span class="w-6 h-6 rounded-md bg-secondary text-on-secondary font-title-md text-title-md flex items-center justify-center shrink-0">1x</span>
+<div>
+<h4 class="font-title-md text-title-md text-primary leading-snug">Trà Đào Cam Sả</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Size M • + Thêm thạch đào giòn (+8.000 ₫)</p>
+</div>
+</div>
+<span class="font-currency-cell text-currency-cell text-primary font-semibold whitespace-nowrap">56.000 ₫</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low/50 hover:bg-surface-container-low transition-colors">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<span class="w-6 h-6 rounded-md bg-secondary text-on-secondary font-title-md text-title-md flex items-center justify-center shrink-0">1x</span>
+<div>
+<h4 class="font-title-md text-title-md text-primary leading-snug">Croissant Bơ Tỏi</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Bếp bánh nướng lại nóng giòn</p>
+</div>
+</div>
+<span class="font-currency-cell text-currency-cell text-primary font-semibold whitespace-nowrap">35.000 ₫</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Financial / Calculation Ledger -->
+<div class="bg-surface-container-low p-space-md rounded-xl mb-space-lg space-y-space-xs font-body-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Tạm tính (4 sản phẩm):</span>
+<span class="font-medium text-on-surface">191.000 ₫</span>
+</div>
+<div class="flex items-center justify-between text-secondary">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">stars</span>
+            Ưu đãi VIP Gold (10%):
+          </span>
+<span class="font-medium">-19.100 ₫</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Thuế VAT (8% bao gồm):</span>
+<span class="font-medium text-on-surface">12.733 ₫</span>
+</div>
+<div class="h-px bg-outline-variant/60 my-space-xs"></div>
+<div class="flex items-center justify-between pt-space-2xs">
+<span class="font-title-md text-title-md text-primary">Tổng cộng thanh toán:</span>
+<span class="font-currency-display text-currency-display text-primary font-bold">171.900 ₫</span>
+</div>
+<!-- Cash settlement breakdown -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg mt-space-sm flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">wallet</span>
+<span class="text-on-surface font-medium">Tiền mặt:</span>
+<span class="text-outline">Khách đưa 200.000 ₫</span>
+</div>
+<div class="text-right">
+<span class="text-on-surface-variant text-label-sm block">Tiền thừa trả khách</span>
+<span class="font-bold text-secondary font-currency-cell">28.100 ₫</span>
+</div>
+</div>
+</div>
+<!-- Activity & Real-time Audit Timeline -->
+<div class="mb-space-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold mb-space-xs block">Nhật ký tác nghiệp</span>
+<div class="relative pl-space-md space-y-space-sm before:content-[''] before:absolute before:left-1.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-outline-variant">
+<div class="relative flex items-center gap-space-sm text-body-sm">
+<span class="w-3 h-3 rounded-full bg-secondary ring-4 ring-surface-container-lowest absolute -left-space-md"></span>
+<span class="font-semibold text-primary">14:15:02</span>
+<span class="text-on-surface-variant">Thu ngân <strong>Quỳnh Anh</strong> tạo đơn &amp; xác nhận thu tiền mặt</span>
+</div>
+<div class="relative flex items-center gap-space-sm text-body-sm">
+<span class="w-3 h-3 rounded-full bg-on-tertiary-container ring-4 ring-surface-container-lowest absolute -left-space-md"></span>
+<span class="font-semibold text-primary">14:15:10</span>
+<span class="text-on-surface-variant">Tự động đẩy lệnh tới màn hình bếp (KDS Barista Quầy Bar)</span>
+</div>
+<div class="relative flex items-center gap-space-sm text-body-sm">
+<span class="w-3 h-3 rounded-full bg-outline ring-4 ring-surface-container-lowest absolute -left-space-md"></span>
+<span class="font-semibold text-primary">14:22:45</span>
+<span class="text-on-surface-variant">Barista <strong>Tuấn Kiệt</strong> bấm sẵn sàng phục vụ tại Bàn 03</span>
+</div>
+</div>
+</div>
+<!-- Sticky Operation Button Matrix -->
+<div class="mt-auto pt-space-md flex flex-col gap-space-xs">
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="inline-flex items-center justify-center gap-space-xs bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg font-title-md text-title-md hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>In lại hóa đơn</span>
+</button>
+<button class="inline-flex items-center justify-center gap-space-xs bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg font-title-md text-title-md hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>In phiếu pha chế</span>
+</button>
+</div>
+<button class="w-full inline-flex items-center justify-center gap-space-xs bg-error-container/40 text-on-error-container hover:bg-error hover:text-on-error px-space-md py-space-sm rounded-lg font-title-md text-title-md transition-colors mt-space-2xs" onclick="confirmRefundModal()">
+<span class="material-symbols-outlined text-[18px]">assignment_return</span>
+<span>Yêu cầu hoàn tiền / Hủy đơn</span>
+</button>
+<span class="font-label-sm text-label-sm text-outline text-center">Yêu cầu quyền Quản lý ca để hủy đơn sau khi đã thanh toán</span>
+</div>
+</div>
+</div>
+<!-- Micro Modal for Refund Authorization (Hidden by default, triggered via click) -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4" id="refund-modal">
+<div class="bg-surface-container-lowest rounded-xl max-w-md w-full p-space-xl shadow-xl flex flex-col">
+<div class="w-12 h-12 rounded-full bg-error-container/60 text-on-error-container flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[28px]">warning</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary tracking-tight">Xác nhận hủy đơn #CF-1043?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+        Hành động này sẽ hoàn trả số tiền <strong>171.900 ₫</strong> vào quỹ tiền mặt và hoàn nguyên định lượng nguyên vật liệu vào kho.
+      </p>
+<div class="mt-space-md">
+<label class="block font-label-md text-label-md text-on-surface mb-1">Lý do hoàn tiền / hủy đơn</label>
+<select class="w-full p-space-xs rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-secondary/40">
+<option>Khách hàng đổi ý / Rời quán trước giờ giao</option>
+<option>Nhầm lẫn món khi thanh toán</option>
+<option>Sự cố chất lượng đồ uống</option>
+<option>Khác...</option>
+</select>
+</div>
+<div class="flex items-center justify-end gap-space-sm mt-space-lg">
+<button class="px-space-md py-space-xs rounded-lg font-title-md text-title-md bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors" onclick="closeRefundModal()">
+          Bỏ qua
+        </button>
+<button class="px-space-md py-space-xs rounded-lg font-title-md text-title-md bg-error text-on-error hover:bg-on-error-container transition-colors" onclick="closeRefundModal()">
+          Xác nhận hoàn 171.900 ₫
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function selectOrder(orderCode) {
+    // Light feedback indicator for list row selection
+    console.log('Selected order:', orderCode);
+  }
+
+  function confirmRefundModal() {
+    const modal = document.getElementById('refund-modal');
+    if (modal) modal.classList.remove('hidden');
+  }
+
+  function closeRefundModal() {
+    const modal = document.getElementById('refund-modal');
+    if (modal) modal.classList.add('hidden');
+  }
+</script></main></div>
+</body></html>
