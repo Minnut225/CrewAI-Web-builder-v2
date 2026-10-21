@@ -1,284 +1,325 @@
-# 🚀 Autonomous Software Engineering Team (CrewAI)
+# ☕ CoffeeFlow — Hệ Thống Quản Lý Quán Cà Phê & Autonomous CrewAI Flow
 
-Hệ thống đội ngũ kỹ sư phần mềm tự động (Autonomous Software Engineering Flow) xây dựng trên nền tảng **CrewAI**. Hệ thống tự động phân tích các tài liệu đặc tả dự án từ `plans/` (PRD, Kiến trúc hệ thống, Lộ trình triển khai), phân rã thành các nhiệm vụ nguyên tử (Work Breakdown Structure - WBS), và phối hợp các Agent chuyên trách lập trình Full-Stack (**Spring Boot 3.x + React 19 Vite**) đạt chuẩn **SOLID, ACID, Zero-Float** và thiết kế **Fintech Prestige Stitch UI**.
+> **CoffeeFlow** là hệ thống quản lý chuỗi/quán cà phê chuyên nghiệp kết hợp phân hệ bán hàng tại quầy (**Cashier POS**) và phân hệ điều hành quản lý (**Manager Dashboard**). Dự án áp dụng kiến trúc Monorepo Full-Stack hiện đại (**FastAPI + React 19 Vite**) và được vận hành, phát triển tự động bởi luồng đa tác tử **CrewAI Flow (BA ➔ Backend ➔ Frontend ➔ QA)** với cơ chế **Fail-Fast Quality Gates** và **Auto-Repair**.
 
 ---
 
 ## 📌 Mục Lục
-1. [Kiến Trúc & Luồng Thực Thi Mới (New Flow Workflow)](#-kiến-trúc--luồng-thực-thi-mới-new-flow-workflow)
-2. [Cấu Trúc Thư Mục Dự Án](#-cấu-trúc-thư-mục-dự-án)
-3. [Cài Đặt & Cấu Hình Môi Trường](#-cài-đặt--cấu-hình-môi-trường)
-4. [Hướng Dẫn Khởi Chạy (How to Run)](#-hướng-dẫn-khởi-chạy-how-to-run)
-5. [Lộ Trình Các Phase & Danh Sách Lệnh](#-lộ-trình-các-phase--danh-sách-lệnh)
-6. [Cơ Chế Theo Dõi Tiến Trình & Log WBS](#-cơ-chế-theo-dõi-tiến-trình--log-wbs)
-7. [Khởi Chạy Ứng Dụng Đã Tạo (Deployment)](#-khởi-chạy-ứng-dụng-đã-tạo-deployment)
+1. [Kiến Trúc Kỹ Thuật (Tech Stack & Architecture)](#-kiến-trúc-kỹ-thuật-tech-stack--architecture)
+2. [Cấu Trúc Thư Mục Monorepo](#-cấu-trúc-thư-mục-monorepo)
+3. [Quy Chuẩn Kỹ Thuật Cốt Lõi (Zero-Tolerance Rules)](#-quy-chuẩn-kỹ-thuật-cốt-lõi-zero-tolerance-rules)
+4. [Cài Đặt & Cấu Hình Môi Trường](#-cài-đặt--cấu-hình-môi-trường)
+5. [Hướng Dẫn Vận Hành CrewAI Multi-Agent Flow](#-hướng-dẫn-vận-hành-crewai-multi-agent-flow)
+6. [Lộ Trình Triển Khai 6 Phase (Roadmap)](#-lộ-trình-triển-khai-6-phase-roadmap)
+7. [Khởi Chạy Ứng Dụng (Deployment)](#-khởi-chạy-ứng-dụng-deployment)
+8. [Kiểm Thử & Đảm Bảo Chất Lượng (Quality Assurance)](#-kiểm-thử--đảm-bảo-chất-lượng-quality-assurance)
+9. [Tài Liệu Đặc Tả & Nhật Ký Phát Triển](#-tài-liệu-đặc-tả--nhật-ký-phát-triển)
 
 ---
 
-## 🔄 Kiến Trúc & Luồng Thực Thi Mới (New Flow Workflow)
+## ⚙️ Kiến Trúc Kỹ Thuật (Tech Stack & Architecture)
 
-Hệ thống áp dụng kiến trúc **Hierarchical Decomposition & Atomic Execution Pipeline** (Phân rã kế hoạch theo tầng & Thực thi nguyên tử) kết hợp **Cổng kiểm soát chất lượng sớm (Fail-Fast Build Gates)**:
+### 1. Phân Hệ Backend (REST API)
+- **Ngôn ngữ & Framework**: Python 3.12+, [FastAPI](https://fastapi.tiangolo.com/), Pydantic v2.
+- **Cơ Sở Dữ Liệu & ORM**: PostgreSQL 16, [SQLAlchemy 2.x](https://docs.sqlalchemy.org/) (Mapped declarative, eager/lazy joins tối ưu), Alembic Migrations.
+- **Bảo Mật & Xác Thực**: JWT (JSON Web Tokens), băm mật khẩu Bcrypt, kiểm soát truy cập dựa trên vai trò (Role-Based Access Control - RBAC).
+- **Kiểm Thử**: `pytest` kết hợp SQLite in-memory / PostgreSQL test fixture.
+
+### 2. Phân Hệ Frontend (Single Page Application - SPA)
+- **Công Nghệ**: React 19, TypeScript, [Vite](https://vitejs.dev/), Tailwind CSS, Lucide React Icons.
+- **Thiết Kế Giao Diện**: Dựa trên Design Tokens và mockup Touch-Friendly POS tại `design/DESIGN_SYSTEM.md`.
+- **Bố Cục Đa Phân Hệ**:
+  - Giao diện POS bán hàng (`/pos`): Tối ưu thao tác chạm nhanh, chọn kích cỡ, topping, thanh toán tiền mặt tức thì.
+  - Khung giao diện quản lý dùng chung (`Layout`, `Sidebar`, `Header`): Thống nhất cho `/dashboard`, `/orders`, `/products`, `/inventory`, `/reports`.
+
+### 3. Động Cơ Tự Động Hóa CrewAI (web_builder)
+Hệ thống tích hợp quy trình phát triển phần mềm đa tác tử tự động hóa (Autonomous Flow Pipeline):
 
 ```mermaid
 flowchart TD
-    Start(["🚀 Bắt đầu"]) --> Stage1["📋 STAGE 1: BA Requirement Analysis & Task Decomposition<br/>(Zero-Touch: Đọc PRD, Architecture, audit code & design)"]
+    Start(["🚀 Bắt đầu Phase"]) --> Stage1["📋 STAGE 1: BA Requirement Analysis<br/>(Đọc PRD, Data Model, phân rã WBS tự động)"]
     
     Stage1 --> LogPlan["💾 Ghi log WBS Plan ra đĩa<br/>(output/plans/wbs_*.json & .md)"]
     
-    LogPlan --> Stage2["⚙️ STAGE 2: Backend Tiered Execution"]
+    LogPlan --> Stage2["⚙️ STAGE 2: Backend Tier Execution<br/>(Models, Schemas, Repositories, Services, APIs)"]
     
-    subgraph Backend_Loop ["📦 Cụm Backend (Atomic Sub-Tasks)"]
-        BE1["BE-1: Entities, DTOs & Repositories"] --> BE2["BE-2: Service Interfaces & Impl (ACID, Zero-Float)"]
-        BE2 --> BE3["BE-3: REST Controllers, Security & Tests"]
-        BE3 --> BE_Gate{"🧪 Backend Gate: mvn test"}
-        BE_Gate -- "Thất bại" --> BE_Repair["🔧 Auto-Repair Backend Agent"]
-        BE_Repair --> BE_Gate
+    subgraph Backend_Gate ["🛡️ Backend Fail-Fast Gate"]
+        Stage2 --> BE_Test{"🧪 pytest --disable-warnings"}
+        BE_Test -- "Thất bại" --> BE_Repair["🔧 Auto-Repair Backend Agent"]
+        BE_Repair --> BE_Test
     end
     
-    Stage2 --> Backend_Loop
-    BE_Gate -- "Vượt qua (0 lỗi)" --> Stage3["🎨 STAGE 3: Frontend Contract-Driven Execution"]
+    BE_Test -- "Vượt qua (100% tests pass)" --> Stage3["🎨 STAGE 3: Frontend Contract Execution<br/>(Types, API Client, Pages & Components)"]
     
-    subgraph Frontend_Loop ["💻 Cụm Frontend (Atomic Sub-Tasks)"]
-        FE1["FE-1: Types & API Services (Sync 1:1 với BE DTOs)"] --> FE2["FE-2: Components, Pages (Stitch Tokens, Dual-Rail Layout)"]
-        FE2 --> FE_Gate{"🧪 Frontend Gate: npm run build"}
-        FE_Gate -- "Thất bại" --> FE_Repair["🔧 Auto-Repair Frontend Agent"]
-        FE_Repair --> FE_Gate
+    subgraph Frontend_Gate ["🛡️ Frontend Fail-Fast Gate"]
+        Stage3 --> FE_Build{"🧪 npm run build (tsc + vite)"}
+        FE_Build -- "Thất bại" --> FE_Repair["🔧 Auto-Repair Frontend Agent"]
+        FE_Repair --> FE_Build
     end
     
-    Stage3 --> Frontend_Loop
-    FE_Gate -- "Vượt qua (0 lỗi)" --> Stage4["🛡️ STAGE 4: QA Acceptance Verification<br/>(Kiểm tra toàn bộ Acceptance Criteria từ BA)"]
-    
-    Stage4 --> Stage5["⚡ STAGE 5: Final Sanity Gate & Archiving<br/>(mvn test + npm run build -> output/reports/)"]
+    FE_Build -- "Vượt qua (0 lỗi TS)" --> Stage4["🛡️ STAGE 4: QA Acceptance Verification<br/>(Kiểm tra toàn bộ Acceptance Criteria & AT-01 đến AT-07)"]
+    Stage4 --> Stage5["📊 STAGE 5: Lưu Báo Cáo Nghiệm Thu & Cập Nhật Trạng Thái"]
     Stage5 --> End(["✅ Hoàn thành Phase"])
 ```
 
-### Các Đặc Điểm Vượt Trội Của Flow Mới:
-* **BA Zero-Touch Decomposition**: BA đọc toàn bộ PRD, Architecture, và cây thư mục hiện tại để tự động sinh bảng phân rã WBS chuẩn JSON/Markdown mà không cần người dùng can thiệp thủ công.
-* **Lưu Trữ Log Minh Bạch**: Bảng kế hoạch chi tiết được tự động lưu vào `output/plans/wbs_<phase>_<timestamp>.json` và `.md` để tiện kiểm tra, audit.
-* **Thực thi nguyên tử (Atomic Execution)**: Chia nhỏ thành các task con có ranh giới file rõ ràng (`BE-1`, `BE-2`, `BE-3`, `FE-1`, `FE-2`, `QA-1`), loại bỏ hoàn toàn tình trạng agent bị quá tải ngữ cảnh (context drift) hay sinh mã stub.
-* **Kiểm tra sớm (Fail-Fast Gate & Auto-Repair)**:
-  - Backend phải vượt qua `mvn test` (toàn bộ unit & integration tests) trước khi Frontend được phép bắt đầu code.
-  - Frontend phải vượt qua `npm run build` (0 lỗi TypeScript/Vite).
-  - Tự động kích hoạt agent sửa lỗi trực tiếp nếu phát hiện build/test fail.
-
 ---
 
-## 📁 Cấu Trúc Thư Mục Dự Án
+## 📁 Cấu Trúc Thư Mục Monorepo
 
 ```text
-CrewAI/
-├── backend/                              # ☕ Phân hệ Spring Boot 3.x (Java 17/21, Security 6, JPA)
-├── frontend/                             # ⚛️ Phân hệ React 19 + TypeScript + Vite + Tailwind CSS
-├── design/                               # 🎨 Mẫu giao diện Stitch Web App UI (HTML, CSS Tokens)
-│   ├── fintech_prestige/DESIGN.md        # Token thiết kế: Bảng màu, Phông chữ, Spacing
-│   ├── finman_web_giao_d_ch_dashboard/   # Dashboard & Sổ cái giao dịch
-│   ├── finman_web_ng_nh_p_h_th_ng/       # Màn hình Đăng nhập (Login Split Screen)
-│   ├── finman_web_ng_k_t_i_kho_n/        # Màn hình Đăng ký (Register Split Screen)
-│   ├── finman_web_popup_th_m_giao_d_ch_m_i/ # Modal Thêm giao dịch Glassmorphism
-│   ├── finman_web_qu_n_l_ng_n_s_ch/      # Quản lý ngân sách chi tiêu
-│   ├── finman_web_t_i_kho_n_t_i_s_n_r_ng/# Màn hình Tài sản ròng & Ví tiền
-│   └── finman_web_th_ng_k_b_o_c_o/       # Màn hình Thống kê báo cáo dòng tiền
-├── plans/                                # 📋 Tài liệu kế hoạch & đặc tả nghiệp vụ
-│   ├── PRD.md                            # Yêu cầu sản phẩm (Product Requirements)
-│   ├── ARCHITECTURE_PLAN.md              # Kiến trúc hệ thống, DB Schema, REST API
-│   ├── IMPLEMENT_PLAN.md                 # Các mốc triển khai 10 Phase
-│   ├── TEST_PLAN.md                      # Kế hoạch kiểm thử & nghiệm thu QA
-│   └── phases/                           # Chi tiết yêu cầu từng phase (phase_0.md -> phase_9.md)
-├── web_builder/                          # 🧠 Core CrewAI Engine & Flow Pipeline
-│   ├── pyproject.toml                    # Cấu hình CrewAI Flow project
-│   └── src/web_builder/
-│       ├── main.py                       # Flow logic (CodingFlow: BA -> BE -> FE -> QA -> Gate)
-│       ├── crews/content_crew/           # Module ContentCrew (Agents, Tasks, isolated Crews)
-│       │   ├── config/agents.yaml        # Định nghĩa 4 Agents (BA, Backend, Frontend, QA)
-│       │   ├── config/tasks.yaml         # Định nghĩa các atomic tasks (Approach A)
-│       │   └── content_crew.py           # ContentCrew class & tool integrations
-│       └── tools/                        # Bộ công cụ lập trình (write_file, patch_file, v.v.)
-├── output/                               # 📊 Thư mục lưu kết quả, tiến độ và log kế hoạch
-│   ├── plans/                            # Log WBS do BA sinh ra (JSON & Markdown)
-│   │   ├── latest_wbs.json               # Kế hoạch phân rã mới nhất
-│   │   └── wbs_<phase>_<timestamp>.json  # Kế hoạch có gắn mốc thời gian
-│   ├── reports/                          # Kho lưu trữ báo cáo nghiệm thu theo phase
-│   ├── coding_team_report.md             # Báo cáo nghiệm thu mới nhất
-│   ├── progress.json                     # Tiến độ thời gian thực (JSON)
-│   └── progress.md                       # Tiến độ dạng bảng Markdown
-├── main.py                               # 🚀 CLI Runner chính (Hỗ trợ tham số --phase, --mode, v.v.)
-├── test_crew.py                          # 🛠️ Script kiểm tra môi trường và API key
-├── docker-compose.yml                    # 🐳 Orchestration: Postgres + Backend + Frontend
-├── .env.example                          # File mẫu biến môi trường
-└── .env                                  # File cấu hình API key cá nhân
+CrewAIv2/
+├── backend/                              # ☕ Phân hệ Backend (FastAPI, SQLAlchemy, Pytest)
+│   ├── app/
+│   │   ├── api/v1/                       # REST API Endpoints (auth, menu, pos, orders, management)
+│   │   ├── core/                         # Config, Security (JWT/Bcrypt), Database Session
+│   │   ├── models/                       # SQLAlchemy ORM Models (User, Category, Product, Order, v.v.)
+│   │   ├── repositories/                 # Data Access Layer & DB Queries
+│   │   ├── schemas/                      # Pydantic v2 Request/Response Schemas
+│   │   └── services/                     # Business Logic (ACID, Concurrency Locks, Zero-Float)
+│   ├── tests/                            # Bộ kiểm thử Pytest tự động (12+ tests P0)
+│   ├── Dockerfile                        # Dockerfile container Backend
+│   └── pyproject.toml                    # Cấu hình dependency Python
+├── frontend/                             # ⚛️ Phân hệ Frontend (React 19 + TypeScript + Vite)
+│   ├── src/
+│   │   ├── api/                          # Axios Client với JWT Interceptors
+│   │   ├── components/                   # Shared UI: Layout, Sidebar, Header, Modals, Receipt
+│   │   ├── pages/                        # CashierPOS, Dashboard, ProductsMenu, Inventory, Reports, Login
+│   │   ├── types/                        # TypeScript Interfaces đồng bộ 1:1 với Pydantic Schemas
+│   │   └── App.tsx                       # React Router & Role-Based Guards
+│   ├── Dockerfile                        # Dockerfile container Frontend (Nginx multi-stage)
+│   └── package.json                      # Cấu hình NPM Scripts & Dependencies
+├── design/                               # 🎨 Design System Tokens & Mockup HTML/CSS Stitch
+│   └── DESIGN_SYSTEM.md                  # Hướng dẫn bảng màu, spacing, typography
+├── docs/                                 # 📚 Tài liệu đặc tả sản phẩm & kỹ thuật
+│   ├── PRD.md                            # Product Requirements Document chi tiết
+│   ├── ARCHITECTURE.md                   # Kiến trúc hệ thống & giải pháp kỹ thuật
+│   ├── DATA_MODEL.md                     # Mô hình dữ liệu & quan hệ thực thể (ERD)
+│   ├── API_CONTRACTS.md                  # Hợp đồng REST API chuẩn
+│   └── BUSINESS_RULES.md                 # Quy tắc nghiệp vụ bắt buộc (BR-01 đến BR-08)
+├── plans/                                # 📋 Kế hoạch triển khai & phân rã công việc
+│   ├── IMPLEMENT_PLAN.md                 # Lộ trình 6 Phase chi tiết
+│   └── TASKS.md                          # Work Breakdown Structure (WBS) & Task Tracking
+├── state/                                # 🔄 Trạng thái thực thi runtime & Agent Handoff
+│   ├── PROJECT_STATE.md                  # Trạng thái hiện tại của codebase
+│   └── HANDOFF.md                        # Biên bản bàn giao giữa các tác tử
+├── web_builder/                          # 🧠 Nhân CrewAI Multi-Agent Pipeline
+│   ├── src/web_builder/
+│   │   ├── main.py                       # CodingFlow Pipeline (BA -> BE -> FE -> QA -> Gate)
+│   │   ├── crews/content_crew/           # Cấu hình Agents & Tasks (YAML & Python)
+│   │   └── tools/                        # Công cụ đọc kế hoạch, đo lường tiến độ, patch file
+│   └── pyproject.toml                    # Cấu hình CrewAI
+├── output/                               # 📊 Nhật ký thực thi, WBS logs & báo cáo QA
+├── docker-compose.yml                    # 🐳 Orchestration: Postgres 16 + FastAPI + React Nginx
+├── main.py                               # 🚀 CLI Runner chính (tham số --phase, --task, --mode)
+├── test_crew.py                          # 🛠️ Script chẩn đoán môi trường trước khi chạy
+├── AGENTS.md                             # 📜 Bộ quy tắc kỹ thuật tối cao cho AI Coding Agents
+└── .env                                  # Biến môi trường & cấu hình API Keys
 ```
 
 ---
 
-## ⚙️ Cài Đặt & Cấu Hình Môi Trường
+## 🛑 Quy Chuẩn Kỹ Thuật Cốt Lõi (Zero-Tolerance Rules)
 
-### 1. Chuẩn Bị Môi Trường
-* **Python**: Yêu cầu phiên bản `>= 3.10`.
-* **Java**: JDK 17 hoặc JDK 21 và Apache Maven.
-* **Node.js**: Phiên bản `>= 18` và npm.
+Tất cả các thay đổi mã nguồn và tác tử AI đều phải tuân thủ nghiêm ngặt các nguyên tắc được định nghĩa tại `AGENTS.md`:
 
-Khởi tạo và kích hoạt môi trường ảo:
+1. **Zero-Float Rule (Tiền tệ chính xác tuyệt đối)**:
+   - Toàn bộ giá trị tiền tệ (`base_price`, `unit_price`, `subtotal`, `total_amount`, `amount_tendered`, `change_amount`) bắt buộc dùng kiểu số nguyên VND (`int` / `BIGINT`) hoặc `Decimal`. **Tuyệt đối không dùng `float`**.
+2. **ACID Transactions**:
+   - Mọi thao tác ghi nhiều bước (Tạo đơn + Snapshot giá, Xác nhận đơn + Trừ tồn kho nguyên liệu, Thanh toán tiền mặt + Chuyển trạng thái `COMPLETED`) phải nằm trong một transaction duy nhất với cơ chế rollback tự động khi có lỗi.
+3. **Chống Race Condition & Idempotency**:
+   - Trừ kho nguyên liệu sử dụng khóa bi quan `SELECT ... FOR UPDATE` để tránh lost-update khi nhiều cashier cùng chốt đơn.
+   - Endpoint thanh toán hỗ trợ `Idempotency-Key` ngăn chặn thanh toán trùng lặp.
+4. **Bảo Toàn Lịch Sử (Price Snapshots)**:
+   - Thông tin giá và tên sản phẩm trong `order_items` phải được snapshot tại thời điểm mua hàng. Việc cập nhật giá sản phẩm trong thực đơn không bao giờ làm thay đổi dữ liệu đơn hàng trong quá khứ.
+5. **Phân Quyền RBAC Nghiêm Ngặt**:
+   - Chỉ có đúng 2 vai trò: `CASHIER` (chỉ thao tác POS và xem đơn) và `MANAGER` (toàn quyền quản trị, xem Dashboard, Kho, Báo cáo và Quản lý nhân viên). Cashier truy cập trang quản lý phải nhận mã lỗi `403 Forbidden`.
+
+---
+
+## 💻 Cài Đặt & Cấu Hình Môi Trường
+
+### 1. Yêu Cầu Tiên Quyết
+* **Python**: Phiên bản `>= 3.10` (Khuyên dùng Python 3.12).
+* **Node.js**: Phiên bản `>= 18` (kèm `npm`).
+* **Docker & Docker Compose** (để chạy database PostgreSQL và kiểm thử production).
+
+### 2. Thiết Lập Môi Trường Ảo Python
 ```powershell
+# Tạo môi trường ảo
 python -m venv .venv
+
+# Kích hoạt môi trường ảo (Windows PowerShell)
 .\.venv\Scripts\Activate.ps1
+
+# Cài đặt thư viện phụ thuộc
 pip install -r requirements.txt
+# hoặc cài trực tiếp backend requirements:
+pip install -r backend/requirements.txt
 ```
 
-### 2. Cấu Hình File `.env`
-Tạo file `.env` từ file mẫu `.env.example`:
+### 3. Thiết Lập Frontend
+```powershell
+cd frontend
+npm install
+cd ..
+```
 
-```bash
-# Chọn LLM Provider: openrouter | openai | gemini
+### 4. Cấu Hình Biến Môi Trường (`.env`)
+Tạo file `.env` ở thư mục gốc:
+
+```env
+# Database Settings
+DATABASE_URL=postgresql+psycopg2://postgres:postgres@localhost:5432/coffeeflow
+SECRET_KEY=supersecretkey0123456789abcdefghijklmnopqrstuvwxyz
+ACCESS_TOKEN_EXPIRE_MINUTES=480
+
+# LLM Engine cho CrewAI (Chọn 1 trong các provider)
 LLM_PROVIDER=openrouter
-OPENROUTER_API_KEY=sk-or-v1-your-api-key-here
+OPENROUTER_API_KEY=sk-or-v1-your-key-here
 MODEL=openrouter/google/gemini-2.5-flash
 
-# Hoặc dùng OpenAI chính thức:
+# Hoặc dùng OpenAI:
 # LLM_PROVIDER=openai
-# OPENAI_API_KEY=sk-proj-your-api-key-here
+# OPENAI_API_KEY=sk-proj-your-key-here
 # MODEL=gpt-4o-mini
 
-# Số lượt tự động sửa lỗi tối đa nếu build/test fail (Mặc định: 3)
+# Tùy chọn Auto-Repair khi build/test thất bại (Mặc định: 3)
 MAX_REPAIR_ATTEMPTS=3
-
-# Tùy chọn Crew Process: sequential | hierarchical
-CREW_PROCESS=sequential
 ```
 
 ---
 
-## 💻 Hướng Dẫn Khởi Chạy (How to Run)
+## 🤖 Hướng Dẫn Vận Hành CrewAI Multi-Agent Flow
 
 ### 1. Kiểm Tra Sức Khỏe Môi Trường (System Diagnostics)
-Trước khi chạy bất kỳ pipeline nào, chạy lệnh sau để kiểm tra môi trường, API key và các công cụ:
+Chạy script chẩn đoán để xác thực Python, các CLI tools (`pytest`, `node`, `npm`), API key và thư mục kế hoạch:
 ```powershell
 python test_crew.py
 ```
-> Khi màn hình hiển thị `✅ ALL CHECKS PASSED`, hệ thống đã sẵn sàng 100%.
+> Khi màn hình xuất hiện `✅ ALL CHECKS PASSED`, hệ thống đã sẵn sàng 100%.
 
----
+### 2. Khởi Chạy Tự Động Theo Phase Với `main.py`
+Pipeline tích hợp sẵn khả năng tự động đọc tài liệu trong `plans/` và `design/`, gọi tác tử BA phân rã WBS và điều phối Backend/Frontend thực thi:
 
-### 2. Khởi Chạy Theo Phase Với CLI `main.py` (Khuyên Dùng)
-
-Lệnh `main.py` ở thư mục gốc được trang bị đầy đủ tham số điều khiển và mặc định chạy chế độ **Flow mới** (BA phân rã WBS + Cổng kiểm tra Fail-Fast).
-
-#### Chạy Một Phase Cụ Thể (Ví dụ: Phase 6):
 ```powershell
-python main.py --phase 6
-```
+# Chạy một Phase cụ thể (Ví dụ: Phase 2 - Menu & POS Orders)
+python main.py --phase 2
 
-#### Chạy Một Nhiệm Vụ Con Cụ Thể (Ví dụ: Task 4.1 trong Phase 4):
-```powershell
-python main.py --phase 4 --task 4.1
-```
+# Chạy một Task con cụ thể (Ví dụ: Task BE-102)
+python main.py --task TASK-BE-102
 
-#### Chạy Toàn Bộ Các Phase Từ Đầu Đến Cuối:
-```powershell
+# Chạy toàn bộ các Phase liên tục theo lộ trình
 python main.py --phase all
 ```
 
-#### Tùy Chọn Động LLM Trực Tiếp Từ Dòng Lệnh:
+### 3. Tùy Biến LLM Trực Tiếp Từ CLI
 ```powershell
-# Chạy với Gemini qua OpenRouter
-python main.py --phase 6 --provider openrouter --model openrouter/google/gemini-2.5-flash
+# Sử dụng Gemini qua OpenRouter
+python main.py --phase 2 --provider openrouter --model openrouter/google/gemini-2.5-flash
 
-# Chạy với OpenAI GPT-4o-mini
-python main.py --phase 6 --provider openai --model gpt-4o-mini
+# Sử dụng OpenAI GPT-4o-mini
+python main.py --phase 2 --provider openai --model gpt-4o-mini
 
-# Chạy với endpoint OpenAI-compatible tùy biến (DeepSeek, vLLM, Ollama)
-python main.py --phase 6 --provider openai --base-url https://api.deepseek.com/v1 --model deepseek-chat
-```
-
-#### Lựa Chọn Pipeline Engine (`--mode`):
-* `--mode flow` *(Mặc định)*: Luồng Flow đa tầng, BA phân rã tự động thành WBS, lưu log ra đĩa, kiểm tra `mvn test` và `npm run build` ở từng tầng.
-* `--mode crew`: Chạy chế độ Crew truyền thống.
-```powershell
-python main.py --phase 6 --mode flow
+# Sử dụng mô hình cục bộ hoặc OpenAI-compatible (Ollama / vLLM / DeepSeek)
+python main.py --phase 2 --provider openai --base-url http://localhost:11434/v1 --model llama3
 ```
 
 ---
 
-### 3. Khởi Chạy Bằng CrewAI CLI (`crewai run`)
-Nếu bạn muốn sử dụng công cụ chuẩn của CrewAI:
-```powershell
-crewai run
-```
-Lệnh này sẽ tự động khởi động `CodingFlow` thông qua cấu hình trong `web_builder/pyproject.toml`.
+## 🗺️ Lộ Trình Triển Khai 6 Phase (Roadmap)
+
+Dự án CoffeeFlow được thiết kế theo 6 Phase tăng trưởng dựa trên [docs/PRD.md](docs/PRD.md) và [plans/IMPLEMENT_PLAN.md](plans/IMPLEMENT_PLAN.md):
+
+| Phase | Trọng Tâm Nghiệp Vụ | Tiêu Chí Hoàn Thành Chính | Lệnh Thực Thi |
+| :---: | :--- | :--- | :--- |
+| **Phase 1** | **Foundation & Authentication** | PostgreSQL Schema, JWT Auth, Phân quyền RBAC (`CASHIER` & `MANAGER`), Màn hình Đăng nhập `/login`. | `python main.py --phase 1` |
+| **Phase 2** | **Menu Management & POS Orders** | Danh mục & Món (`categories`, `products`), Tùy chọn Size/Topping, Giao diện POS bán hàng `/pos`, Lưu Price Snapshots. | `python main.py --phase 2` |
+| **Phase 3** | **Cash Payment & Idempotency** | Thanh toán tiền mặt (`CASH`), Tính tiền thối, Khóa thanh toán trùng (`Idempotency-Key`), Xem lịch sử đơn `/orders`. | `python main.py --phase 3` |
+| **Phase 4** | **Inventory & Auto Stock Deduction** | Quản lý kho nguyên liệu (`ingredients`), Định lượng công thức (`recipes`), Trừ kho nguyên tử với khóa `SELECT FOR UPDATE`. | `python main.py --phase 4` |
+| **Phase 5** | **Dashboard & Sales Reports** | Dashboard phân tích doanh thu `/dashboard`, Báo cáo theo ngày/tuần, Hoàn tiền (`Refund`) & Ghi nhận `audit_logs`. | `python main.py --phase 5` |
+| **Phase 6** | **QA, Security & Release** | Bộ test tích hợp toàn diện (AT-01 đến AT-07), Tối ưu query, Hoàn thiện giao diện thống nhất, Đóng gói Docker Compose. | `python main.py --phase 6` |
 
 ---
 
-### 4. Kiểm Tra Độc Lập Mã Nguồn Sau Khi Sinh (Sanity Check)
+## 🚀 Khởi Chạy Ứng Dụng (Deployment)
 
-Bạn có thể tự chạy kiểm tra mã nguồn bất cứ lúc nào:
-* **Kiểm tra Backend (Toàn bộ 44+ tests)**:
-  ```powershell
-  cd backend
-  mvn test
-  cd ..
-  ```
-* **Kiểm tra Frontend (TypeScript & Vite build)**:
-  ```powershell
-  cd frontend
-  npm run build
-  cd ..
-  ```
+### Cách 1: Khởi Chạy Bằng Docker Compose (Khuyên Dùng Cho Production/Demo)
 
----
-
-## 🎯 Cơ Chế Lộ Trình Động & Độc Lập Dự Án (Project-Agnostic Architecture)
-
-Hệ thống **hoàn toàn không bị ràng buộc hay cố định vào một dự án cụ thể nào (Zero Hardcoding)**. Toàn bộ tên bài toán, kiến trúc dữ liệu, các entity, REST endpoint, giao diện, và các phase triển khai đều được **bóc tách tự động 100% từ thư mục `plans/` và `design/`**:
-- **Muốn xây dựng dự án mới (CRM, E-Commerce, HRM, v.v.)**: Bạn chỉ cần đặt tài liệu (`PRD.md`, `ARCHITECTURE_PLAN.md`, `IMPLEMENT_PLAN.md` hoặc các file trong `plans/phases/`) vào thư mục `plans/`, và mẫu giao diện HTML/CSS vào `design/` (hoặc truyền qua cờ `--plans-dir <đường_dẫn>` và `--design-dir <đường_dẫn>`).
-- Các Agent sẽ tự động đọc, hiểu miền nghiệp vụ mới, và lập trình chính xác theo hợp đồng đó.
-
-### Bảng Lộ Trình Mẫu (Dựa trên tài liệu tham chiếu hiện tại trong `plans/`):
-
-| Phase | Tên Phase & Trọng Tâm Nghiệp Vụ | Lệnh Chạy CLI |
-| :---: | :--- | :--- |
-| **Phase 0** | Khởi tạo dự án, Design Tokens, Cấu hình Docker Compose | `python main.py --phase 0` |
-| **Phase 1** | Database Models, Repositories, Seeder dữ liệu mặc định | `python main.py --phase 1` |
-| **Phase 2** | Authentication Fullstack: Security & JWT Filter, Login/Register | `python main.py --phase 2` |
-| **Phase 3** | Danh mục & Tài nguyên cốt lõi, CRUD, Tính toán tổng hợp | `python main.py --phase 3` |
-| **Phase 4** | Core Engine nghiệp vụ (ACID, toàn vẹn dữ liệu) & Màn hình Dashboard | `python main.py --phase 4` |
-| **Phase 5** | Quản lý hạn mức & Giám sát ngân sách, Cảnh báo tự động | `python main.py --phase 5` |
-| **Phase 6** | Trí Tuệ Nhân Tạo AI: Xử lý ngôn ngữ tự nhiên & Trợ lý thông minh | `python main.py --phase 6` |
-| **Phase 7** | Cài đặt hệ thống, Hồ sơ người dùng & Cá nhân hóa giao diện | `python main.py --phase 7` |
-| **Phase 8** | Báo cáo thống kê, Biểu đồ phân tích dữ liệu, Xuất file (.xlsx / PDF) | `python main.py --phase 8` |
-| **Phase 9** | Nghiệm thu QA toàn diện: Audit Codebase Health, Verify Docker production | `python main.py --phase 9` |
-| **ALL** | Chạy toàn bộ các Phase liên tục từ đầu đến cuối theo kế hoạch | `python main.py --phase all` |
-
----
-
-## 📊 Cơ Chế Theo Dõi Tiến Trình & Log WBS
-
-Sau mỗi lần chạy, bạn có thể kiểm tra kết quả qua các kênh lưu trữ:
-
-1. **Bảng Kế Hoạch WBS Của BA (`output/plans/`)**:
-   - `output/plans/latest_wbs.json`: Bản đồ phân rã task con mới nhất gồm `backend_tasks`, `frontend_tasks`, `acceptance_criteria`.
-   - `output/plans/wbs_<phase>_<timestamp>.md`: Bản giải trình chi tiết về kiến trúc của BA.
-2. **Tiến Trình Thời Gian Thực (`output/progress.json` & `output/progress.md`)**:
-   - Cập nhật tỷ lệ % hoàn thành, task hiện tại, thời gian chạy phục vụ tích hợp dashboard.
-3. **Báo Cáo Nghiệm Thu QA (`output/coding_team_report.md` & `output/reports/`)**:
-   - Chứa kết quả chạy test thực tế từ terminal, xác nhận 0 lỗi biên dịch, 0 test fail, và 0 file stub.
-
----
-
-## 🐳 Khởi Chạy Ứng Dụng Đã Tạo (Deployment)
-
-Sau khi pipeline hoàn tất, bạn có thể khởi chạy ứng dụng Full-Stack bằng Docker:
+Hệ thống được đóng gói hoàn chỉnh gồm cơ sở dữ liệu PostgreSQL, Backend FastAPI và Frontend React:
 
 ```powershell
-# Build và chạy ngầm toàn bộ container (PostgreSQL + Backend + Frontend)
+# Xây dựng và khởi chạy tất cả các dịch vụ chạy ngầm
 docker compose up --build -d
 
-# Xem log các dịch vụ
+# Xem log các dịch vụ theo thời gian thực
 docker compose logs -f
 
-# Dừng toàn bộ dịch vụ
+# Dừng toàn bộ hệ thống
 docker compose down
 ```
 
-### Các Cổng Dịch Vụ:
-* **Frontend Web App**: [http://localhost:3000](http://localhost:3000) hoặc [http://localhost:5173](http://localhost:5173)
-* **Backend REST API**: [http://localhost:8080/api](http://localhost:8080/api)
-* **PostgreSQL Database**: `localhost:5432` (Database: `finman_db`)
+#### Các Cổng Truy Cập Dịch Vụ:
+* **Frontend Web App**: [http://localhost:3000](http://localhost:3000)
+* **Backend REST API**: [http://localhost:8000](http://localhost:8000) (Tài liệu OpenAPI Swagger: [http://localhost:8000/docs](http://localhost:8000/docs))
+* **PostgreSQL Database**: `localhost:5432` (Database: `coffeeflow`, User: `postgres`, Pass: `postgres`)
+
+---
+
+### Cách 2: Khởi Chạy Thủ Công (Chế Độ Development)
+
+#### 1. Chạy Backend:
+```powershell
+# Đảm bảo đã kích hoạt .venv
+cd backend
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+#### 2. Chạy Frontend:
+```powershell
+cd frontend
+npm run dev
+```
+Truy cập [http://localhost:5173](http://localhost:5173) hoặc [http://localhost:3000](http://localhost:3000).
+
+#### 3. Tài Khoản Kiểm Thử Mặc Định:
+| Vai Trò | Tên Đăng Nhập | Mật Khẩu | Quyền Hạn |
+| :--- | :--- | :--- | :--- |
+| **Manager** | `manager1` | `securepass123` | Toàn quyền Dashboard, Menu, Kho, Báo cáo, Nhân viên, POS |
+| **Cashier** | `cashier1` | `securepass123` | Bán hàng POS (`/pos`), Tạo đơn & Thanh toán tiền mặt |
+
+---
+
+## 🧪 Kiểm Thử & Đảm Bảo Chất Lượng (Quality Assurance)
+
+Codebase CoffeeFlow áp dụng cổng kiểm định kép (Dual-Quality Gates). Bạn có thể tự kích hoạt kiểm thử bất kỳ lúc nào:
+
+### 1. Kiểm Thử Backend (Pytest Suite)
+Bộ kiểm thử tự động kiểm tra xác thực, RBAC, tạo đơn, snapshot giá, thanh toán trùng và khóa kho:
+```powershell
+# Chạy toàn bộ 12 test cases kiểm thử tự động
+.\.venv\Scripts\python.exe -m pytest backend/tests -v
+```
+> Kết quả tiêu chuẩn: **12 passed, 0 failures, 0 errors**.
+
+### 2. Kiểm Thử Frontend (TypeScript Type-Check & Production Build)
+Xác thực tính toàn vẹn của mã nguồn TypeScript và đóng gói Vite:
+```powershell
+cd frontend
+npm run build
+cd ..
+```
+> Kết quả tiêu chuẩn: **0 TypeScript errors, build thành công bundle production**.
+
+---
+
+## 📚 Tài Liệu Đặc Tả & Nhật Ký Phát Triển
+
+Để hiểu sâu hơn về kiến trúc và các quy định kỹ thuật của dự án, vui lòng tham khảo các tài liệu chi tiết:
+- [docs/PRD.md](docs/PRD.md): Bản đặc tả yêu cầu sản phẩm đầy đủ (User Stories, Acceptance Tests AT-01 -> AT-07).
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): Kiến trúc phân tầng, giải pháp kỹ thuật, cơ chế caching và logging.
+- [docs/DATA_MODEL.md](docs/DATA_MODEL.md): Chi tiết cấu trúc các bảng dữ liệu, khóa ngoại và chỉ mục.
+- [docs/API_CONTRACTS.md](docs/API_CONTRACTS.md): Danh sách toàn bộ Endpoint, Request Payload và Response Codes.
+- [docs/BUSINESS_RULES.md](docs/BUSINESS_RULES.md): 8 nguyên tắc nghiệp vụ cốt lõi không được vi phạm.
+- [plans/IMPLEMENT_PLAN.md](plans/IMPLEMENT_PLAN.md): Chi tiết lộ trình thực hiện từng giai đoạn.
+- [state/PROJECT_STATE.md](state/PROJECT_STATE.md): Nhật ký trạng thái hoàn thành và biên bản xác thực thực tế.
+- [AGENTS.md](AGENTS.md): Bản hợp đồng làm việc và các quy tắc tối cao cho AI Coding Assistants.
