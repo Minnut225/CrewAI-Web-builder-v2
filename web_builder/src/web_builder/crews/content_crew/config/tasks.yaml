@@ -145,15 +145,17 @@ backend_contract_task:
     Mandatory workflow:
     1. Read AGENTS.md.
     2. Read the assigned task file and all referenced specifications:
+       - output/plans/latest_wbs.md (Work Breakdown Structure & Atomic Tasks from BA)
+       - output/plans/latest_wbs.json (Target files and details decomposed by BA)
+       - state/HANDOFF.md (Handoff from BA)
        - docs/DATA_MODEL.md (Entities, relationships, constraints, migrations)
        - docs/API_CONTRACTS.md (Endpoints, schemas, validations)
        - docs/ARCHITECTURE.md (Package layout, database configuration)
        - plans/TASKS.md (Task definition and criteria)
-       - state/HANDOFF.md (Handoff from BA)
     3. Inspect the current repository and existing changes in 'backend/'.
     4. Resolve dependencies (ORM models, Pydantic schemas, migration scripts).
     5. Implement only the authorized scope:
-       - Database Models, Pydantic Request/Response schemas, and migration files.
+       - Database Models, Pydantic Request/Response schemas, and migration files as specified in the BA WBS and data models.
        - Precision Rule: All monetary fields MUST strictly use integer minor units (VND) or Decimal (Zero-Float rule).
        - Write all source files directly to disk using `write_file`.
     6. Verify every acceptance criterion:
@@ -167,8 +169,11 @@ backend_contract_task:
     Do not claim unverified success.
     Do not overwrite unrelated changes.
 
+    BA Work Breakdown Structure & Architectural Directives:
+    {ba_wbs_plan}
+
     Assigned task: {target_phase} - BE-1: Models, Schemas & Data Contracts
-    Task specification: plans/TASKS.md & docs/DATA_MODEL.md
+    Task specification: output/plans/latest_wbs.md & plans/TASKS.md & docs/DATA_MODEL.md
     State file: state/PROJECT_STATE.md
     Handoff file: state/HANDOFF.md
   expected_output: >
@@ -188,10 +193,11 @@ backend_service_task:
     Mandatory workflow:
     1. Read AGENTS.md.
     2. Read the assigned task file and all referenced specifications:
+       - output/plans/latest_wbs.md (BE-2 atomic tasks decomposed by BA)
+       - state/HANDOFF.md (Contracts from BE-1 and BA)
        - docs/BUSINESS_RULES.md (Business rules, calculations, ACID constraints)
        - docs/DATA_MODEL.md (Entity relations and state transitions)
        - docs/API_CONTRACTS.md (Schemas and service operations)
-       - state/HANDOFF.md (Contracts from BE-1)
     3. Inspect the current repository and existing changes in 'backend/'.
     4. Resolve dependencies and identify missing information.
     5. Implement only the authorized scope:
@@ -213,7 +219,7 @@ backend_service_task:
     Do not overwrite unrelated changes.
 
     Assigned task: {target_phase} - BE-2: Business Logic & Services (ACID & Precision)
-    Task specification: plans/TASKS.md & docs/BUSINESS_RULES.md
+    Task specification: output/plans/latest_wbs.md & plans/TASKS.md & docs/BUSINESS_RULES.md
     State file: state/PROJECT_STATE.md
     Handoff file: state/HANDOFF.md
   expected_output: >
@@ -233,6 +239,7 @@ backend_controller_task:
     Mandatory workflow:
     1. Read AGENTS.md.
     2. Read the assigned task file and all referenced specifications:
+       - output/plans/latest_wbs.md (BE-3 atomic tasks decomposed by BA)
        - docs/API_CONTRACTS.md (REST endpoints, HTTP methods, validation, response wrappers)
        - docs/ARCHITECTURE.md (Security, RBAC dependencies, router conventions)
        - qa/TEST_PLAN.md (Test strategy and coverage requirements)
@@ -258,7 +265,7 @@ backend_controller_task:
     Do not overwrite unrelated changes.
 
     Assigned task: {target_phase} - BE-3: API Routers, Security & Tests
-    Task specification: plans/TASKS.md & docs/API_CONTRACTS.md
+    Task specification: output/plans/latest_wbs.md & plans/TASKS.md & docs/API_CONTRACTS.md
     State file: state/PROJECT_STATE.md
     Handoff file: state/HANDOFF.md
   expected_output: >
@@ -278,7 +285,7 @@ backend_coding_task:
 
     Mandatory workflow:
     1. Read AGENTS.md.
-    2. Read docs/DATA_MODEL.md, docs/API_CONTRACTS.md, and docs/BUSINESS_RULES.md.
+    2. Read output/plans/latest_wbs.md, state/HANDOFF.md, docs/DATA_MODEL.md, docs/API_CONTRACTS.md, and docs/BUSINESS_RULES.md.
     3. Inspect the current repository and existing changes in backend/.
     4. Resolve dependencies and identify missing information.
     5. Implement only authorized scope: Layered architecture, ACID, Zero-Float precision.
@@ -291,7 +298,7 @@ backend_coding_task:
     Do not overwrite unrelated changes.
 
     Assigned task: {target_phase} - Backend Engineering
-    Task specification: plans/TASKS.md
+    Task specification: output/plans/latest_wbs.md & plans/TASKS.md
     State file: state/PROJECT_STATE.md
   expected_output: >
     Structured execution report containing:
@@ -314,9 +321,11 @@ frontend_contract_task:
     Mandatory workflow:
     1. Read AGENTS.md.
     2. Read the assigned task file and all referenced specifications:
+       - output/plans/latest_wbs.md (FE-1 atomic tasks decomposed by BA)
+       - output/plans/latest_wbs.json (Target files and details decomposed by BA)
+       - state/HANDOFF.md (Verified backend endpoints and contracts from BE)
        - docs/API_CONTRACTS.md (Endpoint contracts, request/response schema definitions)
        - docs/DATA_MODEL.md (Field types, nullability, enums)
-       - state/HANDOFF.md (Verified backend endpoints and contracts from BE-3)
     3. Inspect the current repository and existing changes in 'frontend/src/types/' and 'frontend/src/services/'.
     4. Resolve dependencies and ensure 1:1 synchronization with backend schemas.
     5. Implement only the authorized scope:
@@ -333,8 +342,14 @@ frontend_contract_task:
     Do not claim unverified success.
     Do not overwrite unrelated changes.
 
+    BA Work Breakdown Structure & Directives:
+    {ba_wbs_plan}
+
+    Backend Implementation Summary:
+    {backend_summary}
+
     Assigned task: {target_phase} - FE-1: TypeScript Types & API Services
-    Task specification: plans/TASKS.md & docs/API_CONTRACTS.md
+    Task specification: output/plans/latest_wbs.md & plans/TASKS.md & docs/API_CONTRACTS.md
     State file: state/PROJECT_STATE.md
     Handoff file: state/HANDOFF.md
   expected_output: >
@@ -353,7 +368,9 @@ frontend_ui_task:
 
     Mandatory workflow:
     1. Read AGENTS.md.
-    2. MANDATORY DESIGN INSPECTION STEP:
+    2. MANDATORY DESIGN & SPECIFICATION INSPECTION STEP:
+       - Read output/plans/latest_wbs.md to see the exact target frontend files and requirements decomposed by BA.
+       - Read state/HANDOFF.md for verified API endpoints and contracts from Backend and FE-1.
        - Read design/DESIGN_SYSTEM.md to understand the Stitch design tokens, colors, and screen directory.
        - You MUST use `read_file` to inspect ONLY the specific Stitch mockup file `code.html` in '{design_dir}' relevant to the page(s) required in {target_phase}:
          * If implementing Login: design/screen_login/code.html
@@ -368,7 +385,6 @@ frontend_ui_task:
        - DO NOT invent generic or dark themes (NO bg-stone-900, NO bg-stone-950).
        - ALWAYS use the warm cafe theme tokens from Stitch (bg-background, bg-surface-container-*, text-primary, bg-primary, text-on-primary, etc.).
        - Use Google Material Symbols Outlined icons (<span className="material-symbols-outlined">...</span>) matching the Stitch design.
-       - Read state/HANDOFF.md for verified API endpoints and types from FE-1.
     3. Inspect the current repository, layout components (Sidebar, TopHeader, POS Layout), and existing pages.
     4. Resolve dependencies and connect UI components with authenticated API services.
     5. Implement only the authorized scope:
@@ -389,7 +405,7 @@ frontend_ui_task:
     Do not overwrite unrelated changes.
 
     Assigned task: {target_phase} - FE-2: UI Pages, Components & Design System Layout
-    Task specification: plans/TASKS.md & design/DESIGN_SYSTEM.md
+    Task specification: output/plans/latest_wbs.md & plans/TASKS.md & design/DESIGN_SYSTEM.md
     State file: state/PROJECT_STATE.md
     Handoff file: state/HANDOFF.md
   expected_output: >
@@ -409,7 +425,7 @@ frontend_coding_task:
 
     Mandatory workflow:
     1. Read AGENTS.md.
-    2. Read design/DESIGN_SYSTEM.md and use `read_file` to read the corresponding Stitch mockup in design/screen_*/code.html.
+    2. Read output/plans/latest_wbs.md, state/HANDOFF.md, and design/DESIGN_SYSTEM.md and use `read_file` to read the corresponding Stitch mockup in design/screen_*/code.html.
     3. Inspect current repository and existing changes in frontend/.
     4. Resolve dependencies and connect with docs/API_CONTRACTS.md.
     5. Implement only authorized scope: Inherit HTML structure, Tailwind CSS classes, and Material Symbols from Stitch code.html. Enforce Zero-Float VND currency.
@@ -422,7 +438,7 @@ frontend_coding_task:
     Do not overwrite unrelated changes.
 
     Assigned task: {target_phase} - Frontend Engineering
-    Task specification: plans/TASKS.md & design/DESIGN_SYSTEM.md
+    Task specification: output/plans/latest_wbs.md & plans/TASKS.md & design/DESIGN_SYSTEM.md
     State file: state/PROJECT_STATE.md
   expected_output: >
     Structured execution report containing:
@@ -445,6 +461,7 @@ qa_verification_task:
     Mandatory workflow:
     1. Read AGENTS.md.
     2. Read the assigned task file and all referenced specifications:
+       - output/plans/latest_wbs.md (Acceptance criteria and deliverables decomposed by BA)
        - qa/TEST_PLAN.md (Test strategy, quality gates, P0 acceptance criteria)
        - docs/PRD.md (Product acceptance scope)
        - plans/TASKS.md (Task deliverables and criteria)
@@ -465,8 +482,11 @@ qa_verification_task:
     Do not claim unverified success.
     Do not overwrite unrelated changes.
 
+    BA Work Breakdown Structure & Directives:
+    {ba_wbs_plan}
+
     Assigned task: {target_phase} - QA-1: Verification & Acceptance Sign-Off Gate
-    Task specification: qa/TEST_PLAN.md & plans/TASKS.md
+    Task specification: output/plans/latest_wbs.md & qa/TEST_PLAN.md & plans/TASKS.md
     State file: state/PROJECT_STATE.md
     Handoff file: state/HANDOFF.md
   expected_output: >

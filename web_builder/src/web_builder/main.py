@@ -404,6 +404,27 @@ class CodingFlow(Flow[CodingState]):
 
         self.state.wbs_file_path = str(json_path)
 
+        # Update state/HANDOFF.md with latest BA decomposition so BE and FE read it immediately
+        handoff_file = Path("state/HANDOFF.md")
+        handoff_file.parent.mkdir(parents=True, exist_ok=True)
+        handoff_content = f"""# Engineering Handoff: BA Requirement Analysis & Task Decomposition
+
+- **Timestamp**: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+- **Sender**: Business Analyst & Technical Architect
+- **Recipient**: Backend & Frontend Engineering Teams
+- **Target Phase**: {self.state.target_phase}
+- **Status**: COMPLETED
+
+## Executive Summary
+{wbs_dict.get('summary', 'Architectural breakdown completed.')}
+
+## Work Breakdown Structure & Target Contracts
+{raw_text}
+"""
+        with open(handoff_file, "w", encoding="utf-8") as f:
+            f.write(handoff_content)
+        print(f"📁 Updated Handoff from BA: {handoff_file.as_posix()}")
+
         # Print Visual WBS Summary Table to Console
         print("\n" + "=" * 65)
         print("📋 BA WORK BREAKDOWN STRUCTURE (WBS) LOGGED")
@@ -471,6 +492,27 @@ class CodingFlow(Flow[CodingState]):
 
         # Immediate Backend Build & Test Gate (Fail-Fast)
         self._verify_and_repair_backend()
+
+        # Update state/HANDOFF.md with Backend result for Frontend
+        handoff_file = Path("state/HANDOFF.md")
+        handoff_file.parent.mkdir(parents=True, exist_ok=True)
+        be_handoff = f"""# Engineering Handoff: Backend Implementation Sign-Off
+
+- **Timestamp**: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+- **Sender**: Senior Full-Stack Backend Engineer
+- **Recipient**: Frontend Engineering Team
+- **Target Phase**: {self.state.target_phase}
+- **Backend Quality Gate**: {'PASSED' if self.state.backend_passed else 'PENDING/FAILED'}
+
+## 1. Backend Implementation Summary & Endpoints
+{self.state.backend_result}
+
+## 2. BA Work Breakdown Structure Reference
+{self.state.decomposition_raw}
+"""
+        with open(handoff_file, "w", encoding="utf-8") as f:
+            f.write(be_handoff)
+        print(f"📁 Updated Handoff for Frontend: {handoff_file.as_posix()}")
 
     def _verify_and_repair_backend(self):
         max_attempts = int(os.getenv("MAX_REPAIR_ATTEMPTS", "3"))
@@ -550,6 +592,30 @@ class CodingFlow(Flow[CodingState]):
 
         # Immediate Frontend Build Gate (Fail-Fast)
         self._verify_and_repair_frontend()
+
+        # Update state/HANDOFF.md with Frontend result for QA
+        handoff_file = Path("state/HANDOFF.md")
+        handoff_file.parent.mkdir(parents=True, exist_ok=True)
+        fe_handoff = f"""# Engineering Handoff: Frontend Implementation Sign-Off
+
+- **Timestamp**: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+- **Sender**: Senior Frontend Engineer & UI Specialist
+- **Recipient**: QA & Verification Team
+- **Target Phase**: {self.state.target_phase}
+- **Frontend Quality Gate**: {'PASSED' if self.state.frontend_passed else 'PENDING/FAILED'}
+
+## 1. Frontend Implementation Summary
+{self.state.frontend_result}
+
+## 2. Backend Contracts Reference
+{self.state.backend_result}
+
+## 3. BA Specifications Reference
+{self.state.decomposition_raw}
+"""
+        with open(handoff_file, "w", encoding="utf-8") as f:
+            f.write(fe_handoff)
+        print(f"📁 Updated Handoff for QA: {handoff_file.as_posix()}")
 
     def _verify_and_repair_frontend(self):
         max_attempts = int(os.getenv("MAX_REPAIR_ATTEMPTS", "3"))
